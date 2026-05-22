@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Segredo da Cerveja Gelada - Kade Refrigeração</title>
+    
+    <!-- Carregando Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#FBBF24', // Dourado premium
+                        'brand-gold-dark': '#D97706',
+                        'brand-ice': '#38BDF8', // Azul gelo
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0A0A0A; /* Fundo Preto Absoluto */
+            color: #f3f4f6;
+            min-height: 100vh;
+        }
+
+        /* Efeito de pulso metálico no botão */
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(234, 179, 8, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #EAB308 0%, #B45309 100%);
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse-gold 2.5s infinite;
+        }
+        
+        .btn-premium:hover {
+            box-shadow: 0 6px 25px rgba(234, 179, 8, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Degradê para o texto em destaque */
+        .text-gradient {
+            background: linear-gradient(to right, #FBBF24, #FDE68A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Sombra especial no texto para garantir leitura sobre a foto clara */
+        .text-shadow-hard {
+            text-shadow: 0px 4px 20px rgba(0,0,0,0.9), 0px 2px 5px rgba(0,0,0,1);
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen font-sans antialiased pb-12 overflow-x-hidden bg-[#0A0A0A]">
+    
+    <!-- Topo / Header Minimalista e Profissional -->
+    <header class="absolute top-0 left-0 w-full z-20 pt-8 pb-4 flex flex-col items-center justify-center bg-gradient-to-b from-black/80 to-transparent">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-brand-ice/50 flex items-center justify-center bg-black/60 shadow-[0_0_15px_rgba(56,189,248,0.3)] backdrop-blur-sm">
+                <i class="fa-solid fa-snowflake text-brand-ice text-sm"></i>
+            </div>
+            <h1 class="text-white text-xl font-display font-bold tracking-[0.2em] uppercase text-shadow-hard">
+                Kade <span class="text-gray-300 font-light">Refrigeração</span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Imagem de Topo Responsiva (Exibe 100% da foto sem cortar) -->
+    <div class="relative w-full z-0 flex justify-center">
+        <!-- class "h-auto" e "object-contain" garantem que nenhuma foto seja cortada, independente do tamanho -->
+        <img src="imagens/projeto.jpg" alt="Projeto Cerveja Gelada em 5s" class="w-full max-w-xl h-auto object-contain opacity-90 contrast-110 saturate-110 block" />
+        
+        <!-- O gradiente atua apenas do meio para baixo, garantindo leitura sem escurecer o projeto -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-60% to-[#0A0A0A]"></div>
+    </div>
+
+    <!-- Container Principal -->
+    <!-- O margin-top negativo (-mt-24) faz o bloco subir e se encaixar certinho no degradê da foto -->
+    <main class="relative z-10 w-full max-w-md mx-auto flex flex-col gap-6 -mt-24 px-6 text-center">
+
+        <!-- Badge Técnico -->
+        <div class="flex justify-center mb-1">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-brand-gold uppercase border border-brand-gold/40 rounded-full bg-black/40 backdrop-blur-md shadow-lg">
+                <i class="fa-solid fa-file-lines"></i> Tecnologia Revelada 
+            </span>
+        </div>
+
+        <!-- Headline Refinada e Direta (Com sombra forte para destacar da foto) -->
+        <h2 class="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white leading-tight text-shadow-hard">
+            A Tecnologia Definitiva Para Gelar Cerveja em <br/>
+            <span class="text-brand-gold font-black block mt-2 text-5xl drop-shadow-2xl">5 Segundos 🥶</span>
+        </h2>
+
+        <!-- Sub-headline Técnica -->
+        <p class="text-sm text-gray-200 font-light px-2 leading-relaxed mt-1 text-shadow-hard">
+            Construa sua própria <strong class="text-white font-semibold">Tecnologia de Resfriamento</strong>. Vou criar do absoluto zero com você.
+        </p>
+
+        <!-- Box de Compra (Design Clean/High-End) -->
+        <div class="bg-[#111111]/80 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mt-4">
+            
+            <div class="flex flex-col items-center justify-center mb-6 border-b border-white/10 pb-6">
+                <p class="text-[11px] text-gray-400 uppercase tracking-widest mb-2 font-semibold">Acesso Completo ao Projeto</p>
+                <div class="flex items-start gap-1">
+                    <span class="text-brand-gold text-lg mt-2 font-medium">R$</span>
+                    <span class="text-6xl font-display font-black text-white tracking-tighter drop-shadow-md">27<span class="text-2xl text-gray-400 font-medium tracking-normal">,00</span></span>
+                </div>
+                <p class="text-[11px] text-emerald-400 mt-3 font-medium bg-emerald-400/10 px-3 py-1.5 rounded-full tracking-wide border border-emerald-400/20 shadow-inner">
+                    <i class="fa-solid fa-check-circle mr-1"></i> Pagamento Único • Sem Mensalidade
+                </p>
+            </div>
+
+            <!-- Benefícios Estruturados -->
+            <ul class="text-sm text-left text-gray-300 space-y-4 mb-8 font-light">
+                <li class="flex items-start gap-4">
+                    <div class="bg-brand-ice/10 p-2 rounded-lg border border-brand-ice/20 mt-[-4px]">
+                        <i class="fa-solid fa-play text-brand-ice text-sm"></i>
+                    </div>
+                    <span><strong>Video aulas práticas</strong> com esquemas de montagem e passo a passo.</span>
+                </li>
+                <li class="flex items-start gap-4">
+                    <div class="bg-brand-ice/10 p-2 rounded-lg border border-brand-ice/20 mt-[-4px]">
+                        <i class="fa-solid fa-list-check text-brand-ice text-sm"></i>
+                    </div>
+                    <span><strong>Lista de Materiais Exata:</strong> Tudo que você precisa comprar, sem desperdício.</span>
+                </li>
+                <li class="flex items-start gap-4">
+                    <div class="bg-brand-ice/10 p-2 rounded-lg border border-brand-ice/20 mt-[-4px]">
+                        <i class="fa-solid fa-bolt text-brand-ice text-sm"></i>
+                    </div>
+                    <span><strong>Fácil e Rápido:</strong> Projetado para iniciantes. Qualquer um consegue fazer seguindo o manual.</span>
+                </li>
+            </ul>
+
+            <!-- BOTÃO PRINCIPAL -->
+            <!-- TROQUE O # PELO SEU LINK DA CAKTO ABAIXO -->
+            <a href="https://pay.cakto.com.br/j3yajx2_896380" class="relative flex items-center justify-center w-full py-4 px-4 btn-premium text-white font-sans font-bold text-[1.1rem] uppercase tracking-wider rounded-xl overflow-hidden group">
+                <span class="relative z-10 drop-shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-sm opacity-80"></i> Adquirir Projeto Agora
+                </span>
+            </a>
+            
+            <div class="flex items-center justify-center gap-3 mt-5 opacity-60">
+                <i class="fa-brands fa-pix text-xl"></i>
+                <i class="fa-brands fa-cc-mastercard text-xl"></i>
+                <i class="fa-brands fa-cc-visa text-xl"></i>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="mt-16 text-center text-xs text-gray-600 relative z-10 font-light px-4">
+        <p class="font-display font-bold tracking-widest uppercase mb-2 opacity-40">Kade Refrigeração</p>
+        <p>© 2026 Todos os direitos reservados.</p>
+        <div class="flex justify-center gap-4 mt-3 opacity-80">
+            <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+            <span>&bull;</span>
+            <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+        </div>
+    </footer>
+
+</body>
+</html>
