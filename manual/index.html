@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Conserte Sua Geladeira Você Mesmo — João Marcus | Kade Refrigeração</title>
+<meta name="description" content="O técnico com 61 milhões de visualizações ensina você a consertar sua geladeira em casa. Manual completo por R$27. Economize até R$273.">
+<meta name="keywords" content="consertar geladeira, geladeira quebrada, manual refrigeração, técnico geladeira, geladeira não gela">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Conserte Sua Geladeira Você Mesmo — R$27">
+<meta property="og:description" content="61 milhões de visualizações. O técnico mais viral do Brasil ensina você a consertar sua geladeira sem pagar R$300 de técnico.">
+<meta property="og:image" content="https://rasperapido.online/manual-cliente/og-image.jpg">
+<meta property="og:url" content="https://rasperapido.online/manual-cliente/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Conserte Sua Geladeira Você Mesmo — R$27">
+<meta name="twitter:description" content="61M views. O técnico mais viral do Brasil ensina você a resolver sozinho.">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- FACEBOOK PIXEL — Cole seu código aqui -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){...}
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+-->
+
+<!-- GOOGLE ANALYTICS — Cole seu código aqui -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=SEU_GA_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'SEU_GA_ID');
+</script>
+-->
+
+<style>
+:root{
+  --navy:#0d1b2a;
+  --navy2:#1a2e4a;
+  --blue:#1d4ed8;
+  --blue2:#2563eb;
+  --green:#16a34a;
+  --green2:#22c55e;
+  --green-light:#dcfce7;
+  --red:#dc2626;
+  --yellow:#fbbf24;
+  --white:#ffffff;
+  --gray:#f8fafc;
+  --text:#1e293b;
+  --text2:#475569;
+  --border:#e2e8f0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* ── TIPOGRAFIA ── */
+.display{font-family:'Bebas Neue',sans-serif;letter-spacing:1px;line-height:1;}
+h1,h2,h3{line-height:1.2;}
+
+/* ── ANIMAÇÕES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 4px 24px rgba(22,163,74,.4)}50%{box-shadow:0 4px 40px rgba(22,163,74,.7)}}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.fade-up{animation:fadeUp .6s ease-out both;}
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}
+
+/* ── BARRA DE URGÊNCIA ── */
+.urgency-bar{
+  background:linear-gradient(90deg,#dc2626,#b91c1c);
+  color:white;text-align:center;
+  padding:10px 16px;font-size:14px;font-weight:700;
+  position:sticky;top:0;z-index:100;
+}
+.urgency-bar span{color:#fbbf24;}
+
+/* ── CONTADOR ── */
+.timer-wrap{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,0,0,.2);border-radius:8px;
+  padding:4px 12px;margin-top:4px;font-size:13px;
+}
+.timer-block{text-align:center;}
+.timer-num{
+  display:inline-block;background:white;color:#dc2626;
+  font-weight:900;padding:2px 6px;border-radius:4px;
+  font-size:16px;min-width:28px;font-family:'Bebas Neue',sans-serif;
+}
+.timer-label{font-size:9px;display:block;color:rgba(255,255,255,.7);margin-top:2px;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  color:white;padding:48px 20px 60px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(22,163,74,.2);border:1px solid rgba(22,163,74,.4);
+  color:#86efac;padding:6px 16px;border-radius:99px;
+  font-size:13px;font-weight:700;margin-bottom:20px;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(32px,7vw,64px);
+  font-weight:900;margin-bottom:16px;
+  text-shadow:0 2px 20px rgba(0,0,0,.3);
+}
+.hero h1 .red{color:#f87171;}
+.hero h1 .green{color:#4ade80;}
+.hero-sub{
+  font-size:clamp(16px,3.5vw,22px);
+  color:rgba(255,255,255,.85);
+  margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;
+}
+.hero-sub strong{color:#4ade80;}
+
+/* Foto placeholder */
+.photo-wrap{
+  width:140px;height:140px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--navy2));
+  border:4px solid var(--green2);
+  margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:60px;position:relative;
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+.photo-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+.photo-badge{
+  position:absolute;bottom:-8px;right:-8px;
+  background:var(--green);color:white;
+  border-radius:99px;padding:4px 10px;
+  font-size:11px;font-weight:800;
+  border:2px solid white;
+}
+.credentials{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin-bottom:32px;
+}
+.cred{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  padding:6px 14px;border-radius:99px;
+  font-size:13px;font-weight:700;color:rgba(255,255,255,.9);
+}
+
+/* ── BOTÃO CTA ── */
+.btn-cta{
+  display:inline-block;
+  background:linear-gradient(135deg,#16a34a,#15803d);
+  color:white;text-decoration:none;
+  padding:18px 40px;border-radius:12px;
+  font-size:clamp(16px,3.5vw,20px);font-weight:900;
+  border:none;cursor:pointer;width:100%;max-width:500px;
+  animation:pulse-green 2.5s ease-in-out infinite;
+  transition:transform .2s;text-align:center;
+  box-shadow:0 6px 32px rgba(22,163,74,.5);
+  letter-spacing:.3px;
+}
+.btn-cta:hover{transform:translateY(-3px) scale(1.02);}
+.btn-cta .old-price{
+  display:block;font-size:13px;font-weight:600;
+  text-decoration:line-through;color:rgba(255,255,255,.6);
+  margin-bottom:2px;
+}
+.btn-cta .new-price{
+  display:block;font-size:clamp(22px,5vw,28px);font-weight:900;
+}
+.btn-cta .btn-sub{
+  display:block;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.8);margin-top:4px;
+}
+.btn-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;text-align:center;}
+
+/* ── PROOF BAR ── */
+.proof-bar{
+  background:var(--navy);color:white;
+  padding:20px;overflow:hidden;
+}
+.proof-track{
+  display:flex;gap:0;
+  animation:ticker 20s linear infinite;
+  width:max-content;
+}
+.proof-item{
+  display:flex;align-items:center;gap:10px;
+  padding:0 40px;border-right:1px solid rgba(255,255,255,.1);
+  white-space:nowrap;
+}
+.proof-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;color:#4ade80;
+}
+.proof-label{font-size:13px;color:rgba(255,255,255,.7);}
+
+/* ── SECTIONS ── */
+section{padding:60px 20px;}
+.container{max-width:680px;margin:0 auto;}
+.section-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:800;letter-spacing:2px;
+  color:var(--blue);text-transform:uppercase;
+  margin-bottom:12px;
+}
+.section-title{
+  font-size:clamp(26px,5vw,40px);
+  font-weight:900;margin-bottom:16px;color:var(--navy);
+}
+.section-title span{color:var(--green);}
+.section-sub{font-size:16px;color:var(--text2);margin-bottom:32px;}
+
+/* ── PAIN SECTION ── */
+.pain-section{background:var(--gray);}
+.pain-list{display:flex;flex-direction:column;gap:12px;}
+.pain-item{
+  background:white;border:1px solid #fee2e2;
+  border-left:4px solid var(--red);
+  border-radius:12px;padding:16px 20px;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.pain-icon{font-size:24px;flex-shrink:0;margin-top:2px;}
+.pain-text{font-size:15px;font-weight:700;color:var(--text);}
+.pain-sub{font-size:13px;color:var(--text2);margin-top:2px;}
+
+/* ── ABOUT ── */
+.about-section{background:var(--navy);color:white;}
+.quote-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-left:4px solid var(--green2);
+  border-radius:16px;padding:24px;
+  margin:24px 0;font-size:18px;font-weight:700;
+  color:white;font-style:italic;
+}
+.quote-card strong{color:#4ade80;font-style:normal;}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;
+}
+.astat{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;padding:16px;text-align:center;
+}
+.astat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;color:#4ade80;line-height:1;
+}
+.astat-label{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;}
+
+/* ── LEARN ── */
+.learn-list{display:flex;flex-direction:column;gap:10px;}
+.learn-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--green-light);border:1px solid #bbf7d0;
+  border-radius:12px;padding:14px 16px;
+}
+.learn-icon{
+  background:var(--green);color:white;
+  width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;font-weight:900;margin-top:1px;
+}
+.learn-text{font-size:15px;font-weight:700;color:var(--navy);}
+.learn-sub{font-size:13px;color:var(--text2);margin-top:2px;}
+
+/* ── COMPARAÇÃO ── */
+.compare-section{background:var(--gray);}
+.compare-table{border-radius:16px;overflow:hidden;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.compare-row{display:flex;border-bottom:1px solid var(--border);}
+.compare-row:last-child{border-bottom:none;}
+.compare-header{background:var(--navy);color:white;font-weight:800;font-size:14px;padding:14px 16px;flex:1;text-align:center;}
+.compare-cell{flex:1;padding:14px 16px;font-size:14px;font-weight:700;text-align:center;background:white;}
+.compare-cell.bad{color:var(--red);background:#fff5f5;}
+.compare-cell.good{color:var(--green);background:var(--green-light);}
+.compare-row.highlight .compare-cell{background:var(--navy);color:white;font-size:16px;font-weight:900;}
+.compare-row.highlight .compare-cell.winner{background:var(--green);color:white;}
+.economy-box{
+  background:linear-gradient(135deg,var(--green),#15803d);
+  color:white;border-radius:16px;padding:24px;
+  text-align:center;margin-top:20px;
+}
+.economy-box .amount{
+  font-family:'Bebas Neue',sans-serif;font-size:56px;
+  line-height:1;color:white;
+  text-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+.economy-box .label{font-size:16px;font-weight:700;color:rgba(255,255,255,.85);}
+
+/* ── DEPOIMENTOS ── */
+.testimonials-section{background:white;}
+.testimonials-grid{display:flex;flex-direction:column;gap:16px;}
+.testimonial{
+  background:var(--gray);border:1px solid var(--border);
+  border-radius:16px;padding:20px;
+}
+.testimonial-text{font-size:15px;color:var(--text);margin-bottom:12px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:10px;}
+.author-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--navy2);display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.author-name{font-size:14px;font-weight:800;color:var(--navy);}
+.author-location{font-size:12px;color:var(--text2);}
+.stars{color:var(--yellow);font-size:14px;margin-bottom:4px;}
+/* ESPAÇO PARA DEPOIMENTOS REAIS — substitua os placeholders abaixo */
+
+/* ── GARANTIA ── */
+.guarantee-section{
+  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
+  border-top:2px solid #bbf7d0;border-bottom:2px solid #bbf7d0;
+}
+.guarantee-card{
+  text-align:center;
+  background:white;border:2px solid var(--green);
+  border-radius:24px;padding:32px 24px;
+  box-shadow:0 8px 32px rgba(22,163,74,.15);
+}
+.shield-icon{font-size:64px;margin-bottom:16px;display:block;}
+.guarantee-title{font-size:24px;font-weight:900;color:var(--navy);margin-bottom:12px;}
+.guarantee-text{font-size:15px;color:var(--text2);line-height:1.7;}
+
+/* ── CTA FINAL ── */
+.cta-final{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  color:white;text-align:center;padding:60px 20px;
+}
+.cta-final h2{font-size:clamp(28px,6vw,48px);font-weight:900;margin-bottom:12px;}
+.cta-final p{color:rgba(255,255,255,.75);font-size:16px;margin-bottom:32px;}
+.price-box{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;padding:24px;margin-bottom:28px;
+  display:inline-block;min-width:260px;
+}
+.price-old{font-size:16px;color:rgba(255,255,255,.5);text-decoration:line-through;margin-bottom:4px;}
+.price-new{font-family:'Bebas Neue',sans-serif;font-size:64px;color:#4ade80;line-height:1;}
+.price-label{font-size:14px;color:rgba(255,255,255,.6);margin-top:4px;}
+.cta-benefits{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin-top:16px;
+}
+.cta-benefit{
+  display:flex;align-items:center;gap:6px;
+  font-size:13px;color:rgba(255,255,255,.7);font-weight:600;
+}
+
+/* ── FAQ ── */
+.faq-section{background:var(--gray);}
+.faq-list{display:flex;flex-direction:column;gap:12px;}
+.faq-item{
+  background:white;border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+}
+.faq-question{
+  padding:16px 20px;font-weight:800;font-size:15px;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  color:var(--navy);user-select:none;
+}
+.faq-question:hover{background:var(--gray);}
+.faq-arrow{font-size:18px;transition:transform .3s;color:var(--blue);}
+.faq-answer{
+  padding:0 20px;max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s ease;
+  font-size:14px;color:var(--text2);line-height:1.7;
+}
+.faq-item.open .faq-answer{max-height:300px;padding:0 20px 16px;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);color:rgba(255,255,255,.5);
+  padding:32px 20px;text-align:center;font-size:13px;
+}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;}
+
+/* ── WA FLOAT (mobile) ── */
+.wa-float{
+  position:fixed;bottom:20px;right:20px;z-index:200;
+  background:#25D366;color:white;
+  width:56px;height:56px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.5);
+  transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1);}
+@media(max-width:768px){.wa-float{display:flex;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:480px){
+  section{padding:48px 16px;}
+  .photo-wrap{width:120px;height:120px;}
+  .about-stats{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- WA FLUTUANTE (mobile) -->
+<a href="https://wa.me/5535999999999" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- BARRA DE URGÊNCIA -->
+<div class="urgency-bar">
+  🔥 OFERTA EXPIRA EM: 
+  <div class="timer-wrap">
+    <div class="timer-block"><span class="timer-num countdown-h">23</span><span class="timer-label">HORAS</span></div>
+    <span>:</span>
+    <div class="timer-block"><span class="timer-num countdown-m">59</span><span class="timer-label">MIN</span></div>
+    <span>:</span>
+    <div class="timer-block"><span class="timer-num countdown-s">59</span><span class="timer-label">SEG</span></div>
+  </div>
+  — De <span>R$97</span> por apenas <span>R$27</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container fade-up">
+    <div class="hero-badge">🧊 Técnico de Refrigeração </div>
+
+    <h1>Sua geladeira quebrou?<br>Antes de pagar <span class="red">R$300</span> pra um técnico,<br><span class="green">leia isso.</span></h1>
+
+    <p class="hero-sub">
+      O técnico com <strong>+ de 10 anos de experiência</strong> ensina você a diagnosticar e consertar sua geladeira em casa — mesmo sem experiência.
+    </p>
+
+    <!-- FOTO — substitua pela sua foto real -->
+    <div class="photo-wrap">
+     <img src="img/perfil.jpg" alt="João Marcus — Kade Refrigeração">
+      <div class="photo-badge">✔ Técnico</div>
+    </div>
+
+    <div class="credentials">
+      <span class="cred">👨‍🔧 João Marcus</span>
+      <span class="cred">📱 @kade_refrigeracao</span>
+      <span class="cred">📍 NOMADE</span>
+      <span class="cred">🌎 10+ países</span>
+    </div>
+
+    <a href="https://pay.kiwify.com.br/rTJbfbY" class="btn-cta">
+      <span class="old-price">De R$97</span>
+      <span class="new-price">🧊 QUERO O MANUAL POR R$27</span>
+      <span class="btn-sub">👆 Acesso imediato após o pagamento</span>
+    </a>
+    <p class="btn-note">🔒 Pagamento 100% seguro · 7 dias de garantia</p>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL (TICKER) -->
+<div class="proof-bar">
+  <div class="proof-track" id="proof-track">
+    <div class="proof-item"><span class="proof-num">61M</span><span class="proof-label">visualizações em 28 dias</span></div>
+    <div class="proof-item"><span class="proof-num">66K</span><span class="proof-label">seguidores no Instagram</span></div>
+    <div class="proof-item"><span class="proof-num">10+</span><span class="proof-label">países alcançados</span></div>
+    <div class="proof-item"><span class="proof-num">#1</span><span class="proof-label">técnico mais viral do Brasil</span></div>
+    <div class="proof-item"><span class="proof-num">🇧🇷</span><span class="proof-label">Nomade</span></div>
+    <div class="proof-item"><span class="proof-num">🇲🇽🇦🇷🇺🇸</span><span class="proof-label">México · Argentina · EUA</span></div>
+    <!-- Duplicado para efeito infinito -->
+    <div class="proof-item"><span class="proof-num">61M</span><span class="proof-label">visualizações em 28 dias</span></div>
+    <div class="proof-item"><span class="proof-num">66K</span><span class="proof-label">seguidores no Instagram</span></div>
+    <div class="proof-item"><span class="proof-num">10+</span><span class="proof-label">países alcançados</span></div>
+    <div class="proof-item"><span class="proof-num">#1</span><span class="proof-label">técnico mais viral do Brasil</span></div>
+    <div class="proof-item"><span class="proof-num">🇧🇷</span><span class="proof-label">Nomade</span></div>
+    <div class="proof-item"><span class="proof-num">🇲🇽🇦🇷🇺🇸</span><span class="proof-label">México · Argentina · EUA</span></div>
+  </div>
+</div>
+
+<!-- PROBLEMAS -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-tag">🚨 Você está passando por isso?</div>
+    <h2 class="section-title">A geladeira quebrou e agora?</h2>
+    <p class="section-sub">Se você se identificar com algum desses problemas, esse manual foi feito pra você.</p>
+
+    <div class="pain-list">
+      <div class="pain-item fade-up">
+        <span class="pain-icon">🌡️</span>
+        <div>
+          <div class="pain-text">Geladeira não está gelando direito</div>
+          <div class="pain-sub">Comida estragando, prejuízo aumentando a cada hora</div>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-1">
+        <span class="pain-icon">💰</span>
+        <div>
+          <div class="pain-text">Técnico cobra R$150 a R$300 só pra dar uma olhada</div>
+          <div class="pain-sub">Ainda tem peças e mão de obra por cima</div>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-2">
+        <span class="pain-icon">📅</span>
+        <div>
+          <div class="pain-text">Esperando dias pelo técnico aparecer</div>
+          <div class="pain-sub">Enquanto isso, tudo estraga e o calor não para</div>
+        </div>
+      </div>
+      <div class="pain-item fade-up delay-3">
+        <span class="pain-icon">😰</span>
+        <div>
+          <div class="pain-text">Não sabe se o conserto vai valer a pena ou se é melhor trocar</div>
+          <div class="pain-sub">E o técnico sempre fala que precisa de mais coisa</div>
+        </div>
+      </div>
+      <div class="pain-item fade-up">
+        <span class="pain-icon">🔧</span>
+        <div>
+          <div class="pain-text">Motor ligando e desligando sem parar</div>
+          <div class="pain-sub">Conta de luz subindo, geladeira morrendo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE JOÃO MARCUS -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-tag" style="color:#86efac;">👨‍🔧 Quem vai te ensinar</div>
+    <h2 class="section-title" style="color:white;">Sou o João Marcus.<br>Técnico de <span style="color:#4ade80;">refrigeração de verdade.</span></h2>
+
+    <p style="color:rgba(255,255,255,.75);font-size:16px;margin-bottom:20px;">
+      Trabalho consertando geladeira há anos. Comecei a filmar meu trabalho do dia a dia no Instagram e em 28 dias meus vídeos alcançaram mais de 61 milhões de visualizações.
+    </p>
+
+    <div class="quote-card">
+      "Na divisão de bens, pedi só <strong>o motor da geladeira.</strong>"
+      <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:8px;font-style:normal;">— Gambiarra não... Recurso Técnico! kkkk</div>
+    </div>
+
+    <p style="color:rgba(255,255,255,.75);font-size:15px;margin-bottom:24px;">
+      Não sou youtuber. Não sou influencer. Sou técnico. E agora resolvi colocar tudo que aprendi em um manual simples, que qualquer pessoa consegue seguir — mesmo sem ter mexido em geladeira na vida.
+    </p>
+
+    <div class="about-stats">
+      <div class="astat"><div class="astat-num">61M</div><div class="astat-label">Views em 28 dias</div></div>
+      <div class="astat"><div class="astat-num">66K</div><div class="astat-label">Seguidores</div></div>
+      <div class="astat"><div class="astat-num">10+</div><div class="astat-label">Países</div></div>
+      <div class="astat"><div class="astat-num">BR</div><div class="astat-label">Nomade</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ VAI APRENDER -->
+<section>
+  <div class="container">
+    <div class="section-tag">📚 Conteúdo do manual</div>
+    <h2 class="section-title">O que você vai aprender</h2>
+    <p class="section-sub">Passo a passo claro. Sem termos técnicos. Sem enrolação.</p>
+
+    <div class="learn-list">
+      <div class="learn-item fade-up">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Como diagnosticar o problema sem ser técnico</div>
+          <div class="learn-sub">Descubra exatamente o que está errado antes de gastar qualquer centavo</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up delay-1">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Por que sua geladeira para de gelar — e como resolver</div>
+          <div class="learn-sub">A causa número 1 dos problemas e o conserto mais simples que existe</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up delay-2">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Motor ligando e desligando — o que fazer</div>
+          <div class="learn-sub">Problema do compressor explicado do jeito mais simples possível</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up delay-3">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Como saber se vale consertar ou se é melhor trocar</div>
+          <div class="learn-sub">Critérios claros pra você não jogar dinheiro fora</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Geladeira fazendo barulho — causas e soluções</div>
+          <div class="learn-sub">Do barulho de gelo ao compressor ruidoso</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up delay-1">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Manutenção preventiva — como evitar que quebre</div>
+          <div class="learn-sub">Os erros que todo mundo comete e encurta a vida da geladeira</div>
+        </div>
+      </div>
+      <div class="learn-item fade-up delay-2">
+        <div class="learn-icon">✓</div>
+        <div>
+          <div class="learn-text">Funciona para Brastemp, Consul, Electrolux, Samsung, LG e mais</div>
+          <div class="learn-sub">Os princípios são os mesmos para qualquer marca</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://pay.kiwify.com.br/rTJbfbY" class="btn-cta" style="max-width:480px;display:inline-block;">
+        <span class="old-price">De R$97</span>
+        <span class="new-price">🧊 QUERO APRENDER — R$27</span>
+        <span class="btn-sub">Acesso imediato · PDF completo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARAÇÃO DE PREÇO -->
+<section class="compare-section">
+  <div class="container">
+    <div class="section-tag">💰 Faça as contas</div>
+    <h2 class="section-title">R$27 vs <span>R$300</span></h2>
+    <p class="section-sub">A matemática é simples. Veja a diferença.</p>
+
+    <div class="compare-table">
+      <div class="compare-row">
+        <div class="compare-header">O que você paga</div>
+        <div class="compare-header">Chamar técnico</div>
+        <div class="compare-header">Manual do João Marcus</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell" style="background:#f8fafc;font-weight:700;color:#64748b;">Custo inicial</div>
+        <div class="compare-cell bad">R$150 a R$300<br><small>só a visita</small></div>
+        <div class="compare-cell good">R$27<br><small>uma vez só</small></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell" style="background:#f8fafc;font-weight:700;color:#64748b;">Peças + mão de obra</div>
+        <div class="compare-cell bad">+ R$100 a R$500<br><small>por fora</small></div>
+        <div class="compare-cell good">Você mesmo faz<br><small>só paga a peça</small></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell" style="background:#f8fafc;font-weight:700;color:#64748b;">Tempo de espera</div>
+        <div class="compare-cell bad">Dias ou semanas</div>
+        <div class="compare-cell good">Hoje mesmo</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell" style="background:#f8fafc;font-weight:700;color:#64748b;">Você aprende</div>
+        <div class="compare-cell bad">❌ Nada</div>
+        <div class="compare-cell good">✅ Para sempre</div>
+      </div>
+      <div class="compare-row highlight">
+        <div class="compare-cell">💸 Total</div>
+        <div class="compare-cell bad" style="background:#dc2626;">Até R$800</div>
+        <div class="compare-cell winner">Só R$27</div>
+      </div>
+    </div>
+
+    <div class="economy-box">
+      <div class="amount">R$773</div>
+      <div class="label">de economia potencial com um único conserto</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-tag">⭐ O que dizem quem já usou</div>
+    <h2 class="section-title">Quem seguiu o manual <span>resolveu</span></h2>
+
+    <div class="testimonials-grid">
+      <!-- DEPOIMENTO 1 — Substitua pelo real -->
+      <div class="testimonial fade-up">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">"Minha geladeira estava ligando e desligando sem parar. Segui o manual, identifiquei o relê com defeito, comprei por R$18 no mercado livre e consertei eu mesmo. Economizei mais de R$200!"</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Maria S.</div>
+            <div class="author-location">São Paulo, SP</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPOIMENTO 2 — Substitua pelo real -->
+      <div class="testimonial fade-up delay-1">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">"Nunca mexi em geladeira na vida. O manual é tão claro que em 2 horas resolvi o problema. O técnico tinha pedido R$280 só pela visita."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div>
+            <div class="author-name">Carlos R.</div>
+            <div class="author-location">Belo Horizonte, MG</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPOIMENTO 3 — Substitua pelo real -->
+      <div class="testimonial fade-up delay-2">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-text">"Geladeira Brastemp parou de gelar. Segui o passo a passo, descobri que era o gás. Chamei o técnico só pra botar o gás — paguei R$80 em vez de R$350 que ele queria cobrar pelo serviço completo."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Ana L.</div>
+            <div class="author-location">Rio de Janeiro, RJ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-card fade-up">
+      <span class="shield-icon">🛡️</span>
+      <div class="guarantee-title">Garantia de 7 dias — sem perguntas</div>
+      <p class="guarantee-text">
+        Comprou, baixou e não ficou satisfeito por qualquer motivo? Manda um e-mail em até 7 dias e devolvemos 100% do seu dinheiro. Simples assim. Sem burocracia, sem questionamento.
+        <br><br>
+        <strong style="color:var(--green);">Risco zero para você. Totalmente zero.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Sua geladeira não pode esperar.<br>Nem seu bolso.</h2>
+    <p>Acesso imediato. Funciona pra qualquer marca. Você consegue fazer.</p>
+
+    <div class="price-box">
+      <div class="price-old">De R$97</div>
+      <div class="price-new">R$27</div>
+      <div class="price-label">pagamento único · acesso para sempre</div>
+    </div>
+
+    <br>
+    <a href="https://pay.kiwify.com.br/rTJbfbY" class="btn-cta" style="max-width:500px;display:inline-block;">
+      <span class="new-price">🧊 QUERO CONSERTAR MINHA GELADEIRA</span>
+      <span class="btn-sub">Clique aqui e acesse agora por R$27</span>
+    </a>
+
+    <div class="cta-benefits">
+      <span class="cta-benefit">🔒 Pagamento seguro</span>
+      <span class="cta-benefit">📱 Funciona no celular</span>
+      <span class="cta-benefit">⚡ Acesso imediato</span>
+      <span class="cta-benefit">🛡️ 7 dias de garantia</span>
+      <span class="cta-benefit">♾️ Acesso para sempre</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-tag">❓ Dúvidas frequentes</div>
+    <h2 class="section-title">Antes de ir, <span>tire suas dúvidas</span></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Funciona para qualquer marca de geladeira? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Sim. Os problemas mais comuns de geladeira são iguais em praticamente todas as marcas — Brastemp, Consul, Electrolux, Samsung, LG, Midea e outras. O manual cobre os principais problemas que aparecem em qualquer geladeira.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Preciso ter conhecimento técnico para usar? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Não. O manual foi escrito para quem nunca mexeu em geladeira na vida. As instruções são em linguagem simples, com o passo a passo explicado de forma clara. Se você sabe trocar uma lâmpada, você consegue seguir o manual.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Como recebo o manual após a compra? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Imediatamente após o pagamento ser confirmado você recebe um e-mail com o link para baixar o manual em PDF. O acesso é imediato — você pode estar lendo em menos de 2 minutos após a compra.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">E se o manual não resolver meu problema? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Você tem 7 dias de garantia total. Se por qualquer motivo o manual não te ajudar, manda um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem burocracia. O risco é completamente nosso.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">É seguro fazer os reparos eu mesmo? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Sim, para a maioria dos problemas abordados no manual. O guia explica quais reparos você pode fazer com segurança e quais precisam de um técnico especializado (como recarga de gás, por exemplo). A ideia é que você identifique o problema e resolva o que for acessível — e saiba quando chamar ajuda.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">É o mesmo João Marcus do Instagram com 61M de views? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Sim! Sou o João Marcus, o @kade_refrigeracao do Instagram. Trabalho como técnico de refrigeração e comecei a viralizar com meus vídeos do dia a dia no trabalho. Este manual é o resumo de tudo que aprendi em anos de profissão.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://pay.kiwify.com.br/rTJbfbY" class="btn-cta" style="max-width:480px;display:inline-block;">
+        <span class="old-price">De R$97</span>
+        <span class="new-price">🧊 COMEÇAR AGORA — R$27</span>
+        <span class="btn-sub">🛡️ 7 dias de garantia · Acesso imediato</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2025 João Marcus — @kade_refrigeracao · </div>
+  <div style="margin-top:8px;">
+    <a href="#">Política de Privacidade</a> · 
+    <a href="#">Termos de Uso</a> · 
+    <a href="mailto:contato@kaderefrigeracao.com">Contato</a>
+  </div>
+  <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.3);">
+    Este produto é um manual digital em PDF. Resultados podem variar. Garantia de 7 dias conforme Código de Defesa do Consumidor.
+  </div>
+</footer>
+
+<script>
+// ── COUNTDOWN 24H (reinicia automaticamente) ──
+(function(){
+  const KEY='kade_countdown_end';
+  let end=localStorage.getItem(KEY);
+  if(!end||Date.now()>parseInt(end)){
+    end=Date.now()+24*60*60*1000;
+    localStorage.setItem(KEY,end);
+  }
+  function update(){
+    const diff=parseInt(localStorage.getItem(KEY))-Date.now();
+    if(diff<=0){
+      const ne=Date.now()+24*60*60*1000;
+      localStorage.setItem(KEY,ne);
+      return;
+    }
+    const h=Math.floor(diff/3600000);
+    const m=Math.floor((diff%3600000)/60000);
+    const s=Math.floor((diff%60000)/1000);
+    document.querySelectorAll('.countdown-h').forEach(el=>el.textContent=String(h).padStart(2,'0'));
+    document.querySelectorAll('.countdown-m').forEach(el=>el.textContent=String(m).padStart(2,'0'));
+    document.querySelectorAll('.countdown-s').forEach(el=>el.textContent=String(s).padStart(2,'0'));
+  }
+  update();setInterval(update,1000);
+})();
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+// ── ANIMAÇÕES DE ENTRADA ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(24px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  obs.observe(el);
+});
+
+// ── SCROLL SUAVE ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// ── TRACKER DE CLIQUE NO CTA (para FB Pixel) ──
+document.querySelectorAll('a[href*="kiwify"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    // fbq('track', 'InitiateCheckout'); // Descomente quando tiver o Pixel
+    // gtag('event', 'begin_checkout'); // Descomente quando tiver o GA4
+    console.log('CTA clicked');
+  });
+});
+</script>
+</body>
+</html>
