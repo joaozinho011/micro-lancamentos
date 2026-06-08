@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Completo de Refrigeração | Do Zero ao Profissional</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Aprenda a profissão de técnico de refrigeração do zero com João Marcus. Passo a passo prático para você trabalhar por conta própria e faturar alto.">
+    <meta name="keywords" content="curso de refrigeração, conserto de geladeira, técnico em refrigeração, renda extra, joão marcus refrigeração, kade refrigeração">
+    <meta name="author" content="João Marcus Refrigeração">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com.br/">
+    <meta property="og:title" content="Curso Completo de Refrigeração | Do Zero ao Profissional">
+    <meta property="og:description" content="Aprenda a profissão de técnico de refrigeração do zero. Curso prático para você trabalhar por conta própria e faturar alto.">
+    <!-- Adicione a URL de uma imagem real depois -->
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/0a1628/ffffff?text=Curso+de+Refrigeracao">
+
+    <!-- Favicon Emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN para arquivo único) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkblue: '#0a1628',
+                        midblue: '#1a3a5c',
+                        brandgreen: '#00c853',
+                        brandgreenhover: '#00a344',
+                        brandyellow: '#ffd700',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Estilos Customizados (Animações e Glassmorphism) -->
+    <style>
+        body {
+            background-color: #0a1628;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Animações de Scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animação Pulso do Botão */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+        }
+        .btn-pulse {
+            animation: pulse-green 2s infinite;
+        }
+
+        /* FAQ Accordion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px; /* valor alto para garantir abertura */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Degradê para textos de destaque */
+        .text-gradient {
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <!-- PIXEL FACEBOOK (Comentado) -->
+    <!--
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_AQUI');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_PIXEL_AQUI&ev=PageView&noscript=1"
+    /></noscript>
+    -->
+
+    <!-- GOOGLE ANALYTICS (Comentado) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=SEU_GA_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'SEU_GA_AQUI');
+    </script>
+    -->
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-brandyellow selection:text-darkblue">
+
+    <!-- 1. BANNER DE URGÊNCIA NO TOPO -->
+    <div class="bg-[#d32f2f] text-white text-center py-2 px-4 text-sm md:text-base font-bold sticky top-0 z-50 shadow-md">
+        🔥 VAGAS LIMITADAS — Turma fechando em breve!
+    </div>
+
+    <!-- 2. HEADLINE PRINCIPAL -->
+    <header class="bg-darkblue pt-16 pb-20 px-6 relative overflow-hidden">
+        <!-- Elemento de fundo decorativo -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full opacity-10 pointer-events-none" 
+             style="background: radial-gradient(circle, #00c853 0%, transparent 70%); blur: 100px;"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <span class="inline-block py-1 px-3 rounded-full bg-midblue border border-white/10 text-brandyellow text-xs md:text-sm font-bold tracking-wide uppercase mb-6">
+                Profissão à prova de crise
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                Aprenda a Profissão que Tem <span class="text-brandyellow underline decoration-brandgreen decoration-4 underline-offset-8">Serviço em Qualquer Cidade</span> do Brasil
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
+                Torne-se técnico de refrigeração do zero com quem tem <span class="text-white font-bold">10 Anos de experiência</span> e vive na prática. Não dependa de patrão e comece a ganhar em 30 dias.
+            </p>
+        </div>
+    </header>
+
+   <!-- 3. SEÇÃO SOBRE O INSTRUTOR -->
+<section class="bg-midblue py-20 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 reveal">
+
+        <div class="w-full md:w-5/12 flex justify-center">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-brandgreen p-2 relative">
+                <div class="w-full h-full rounded-full overflow-hidden shadow-2xl">
+
+                    <img
+                        src="img/perfil.jpg"
+                        alt="KADE"
+                        class="w-full h-full object-cover"
+                    >
+
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-brandgreen text-darkblue text-xs font-bold py-1 px-3 rounded-full">
+                        @kade_refrigeracao
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-7/12 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Quem será seu professor?</h2>
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                    "Sou <strong class="text-white">João Marcus</strong>, técnico de refrigeração há mais de 10 anos. Comecei do absoluto zero, sem saber pegar numa ferramenta. Hoje trabalho por conta própria, faço meus horários e já ensinei <strong>+ de 1.000 pessoas</strong> 
+                </p>
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                    Minha missão é simples: vou te ensinar tudo que sei, sem enrolação. O passo a passo prático para você sair do desemprego ou da falta de dinheiro e ter a sua própria profissão.
+                </p>
+                <div class="inline-flex items-center gap-2 text-brandyellow font-bold text-lg bg-darkblue py-2 px-4 rounded-lg border border-white/10">
+                    <span>📱</span> Siga no Instagram: @kade_refrigeracao
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NÚMEROS EM DESTAQUE -->
+    <section class="bg-darkblue py-16 px-6 -mt-8 relative z-20">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+            <div class="glass p-6 rounded-2xl text-center shadow-lg transform transition hover:-translate-y-2">
+                <div class="text-3xl md:text-4xl font-black text-brandgreen mb-2">70M</div>
+                <div class="text-sm md:text-base font-semibold text-gray-300">Visualizações</div>
+            </div>
+            <div class="glass p-6 rounded-2xl text-center shadow-lg transform transition hover:-translate-y-2">
+                <div class="text-3xl md:text-4xl font-black text-brandgreen mb-2">71K</div>
+                <div class="text-sm md:text-base font-semibold text-gray-300">Seguidores</div>
+            </div>
+            <div class="glass p-6 rounded-2xl text-center shadow-lg transform transition hover:-translate-y-2">
+                <div class="text-3xl md:text-4xl font-black text-brandgreen mb-2">+10</div>
+                <div class="text-sm md:text-base font-semibold text-gray-300">Anos de Experiência</div>
+            </div>
+            <div class="glass p-6 rounded-2xl text-center shadow-lg transform transition hover:-translate-y-2">
+                <div class="text-3xl md:text-4xl font-black text-brandgreen mb-2">+10</div>
+                <div class="text-sm md:text-base font-semibold text-gray-300">Países Alcançados</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. POR QUE APRENDER REFRIGERAÇÃO -->
+    <section class="bg-midblue py-20 px-6">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Por que a Refrigeração é a <span class="text-brandyellow">Melhor Profissão</span> Hoje?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">🏠</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Todo mundo tem</h3>
+                        <p class="text-gray-400 text-sm">Praticamente 100% das casas e comércios têm uma geladeira. O mercado é infinito.</p>
+                    </div>
+                </div>
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">❄️</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Sempre quebra</h3>
+                        <p class="text-gray-400 text-sm">Equipamentos dão defeito todos os dias. Falta mão de obra para tanta demanda.</p>
+                    </div>
+                </div>
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">🥇</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Poucos qualificados</h3>
+                        <p class="text-gray-400 text-sm">A maioria dos "técnicos" são amadores. Quem sabe o que faz domina a cidade.</p>
+                    </div>
+                </div>
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">🗺️</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Trabalha em qualquer lugar</h3>
+                        <p class="text-gray-400 text-sm">Seja capital ou interior, você nunca vai ficar sem ter o que fazer.</p>
+                    </div>
+                </div>
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">🎓</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Sem precisar de faculdade</h3>
+                        <p class="text-gray-400 text-sm">Você aprende a prática direto ao ponto, sem perder anos em salas de aula teóricas.</p>
+                    </div>
+                </div>
+                <div class="bg-darkblue p-6 rounded-2xl border border-white/5 flex items-start gap-4">
+                    <div class="text-4xl">⏱️</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Ganhos rápidos</h3>
+                        <p class="text-gray-400 text-sm">A partir de 30 a 60 dias de curso você já consegue fazer seus primeiros consertos cobrando.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. QUANTO GANHA UM TÉCNICO -->
+    <section class="bg-darkblue py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Mas afinal, <span class="text-brandgreen">Quanto Ganha</span> um Técnico?</h2>
+            <p class="text-lg text-gray-300 mb-12">Veja a média de valores trabalhando por conta própria, sem dividir lucro com patrão:</p>
+            
+            <div class="glass rounded-3xl overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Tabela Esquerda -->
+                    <div class="p-8 border-b md:border-b-0 md:border-r border-white/10 flex flex-col justify-center">
+                        <ul class="space-y-6 text-left">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <div>
+                                    <span class="block font-bold text-lg">Serviço Simples</span>
+                                    <span class="text-xs text-gray-400">Ex: Troca de termostato</span>
+                                </div>
+                                <span class="font-black text-brandgreen text-xl">R$150 - R$300</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                <div>
+                                    <span class="block font-bold text-lg">Carga de Gás</span>
+                                    <span class="text-xs text-gray-400">Serviço de 1 a 2 horas</span>
+                                </div>
+                                <span class="font-black text-brandgreen text-xl">R$200 - R$400</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-3">
+                                <div>
+                                    <span class="block font-bold text-lg">Troca de Compressor</span>
+                                    <span class="text-xs text-gray-400">Serviço complexo e valorizado</span>
+                                </div>
+                                <span class="font-black text-brandgreen text-xl">R$300 - R$600</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Resumo Direita -->
+                    <div class="bg-brandgreen/10 p-8 flex flex-col justify-center items-center text-center">
+                        <div class="mb-6">
+                            <p class="text-gray-300 font-medium mb-1">Ganhos em um dia cheio:</p>
+                            <p class="text-3xl font-black text-white">R$500 a R$1.500</p>
+                        </div>
+                        <div class="w-16 h-1 bg-brandgreen/30 mx-auto mb-6 rounded"></div>
+                        <div>
+                            <p class="text-gray-300 font-medium mb-1">Potencial Mês Completo:</p>
+                            <p class="text-4xl md:text-5xl font-black text-brandyellow">R$3.000 a R$8.000+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PRIMEIRO BOTÃO DE COMPRA -->
+    <section class="bg-midblue py-16 px-6 relative">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <h3 class="text-2xl font-bold mb-8">Essa é a sua chance de mudar a sua realidade financeira.</h3>
+            
+            <a href="https://pay.cakto.com.br/iczuu7x_876274" class="btn-pulse inline-flex flex-col items-center justify-center w-full md:w-auto bg-brandgreen hover:bg-brandgreenhover text-white rounded-2xl py-5 px-8 min-h-[80px] shadow-2xl transition-all transform hover:scale-105 no-underline">
+                <span class="text-xl md:text-2xl font-black uppercase tracking-wide">🟢 Quero Começar Agora</span>
+                <span class="text-sm md:text-base font-semibold mt-1">Por apenas R$ 297 ou 12x de R$ 29,70</span>
+            </a>
+            
+            <div class="mt-4 flex items-center justify-center gap-2 text-sm text-gray-400 font-medium">
+                <svg class="w-4 h-4 text-brandgreen" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                Pagamento 100% Seguro via Cakto
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. O QUE VOCÊ VAI APRENDER -->
+    <section class="bg-darkblue py-20 px-6">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">O que você vai aprender na prática?</h2>
+            <p class="text-center text-gray-400 mb-12">Um passo a passo completo, do básico ao avançado.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Módulo 1 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">🛠️</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 1</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Fundamentos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Como funciona o ciclo da refrigeração, ferramentas essenciais que você precisa comprar primeiro e regras de segurança no trabalho.</p>
+                </div>
+                
+                <!-- Módulo 2 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">🔍</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 2</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Diagnóstico de Defeitos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">O segredo dos mestres: como chegar na casa do cliente e identificar exatamente onde está o problema sem desperdiçar tempo e dinheiro.</p>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">🔧</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 3</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Os 20 Consertos Mais Comuns</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Aprenda a consertar os defeitos que representam 90% dos chamados. Tudo filmado na prática real, mão na massa.</p>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">💨</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 4</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Gás Refrigerante</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Domine a carga de gás. Conheça os tipos de gás, como usar o manômetro corretamente e realizar o vácuo no sistema com segurança.</p>
+                </div>
+
+                <!-- Módulo 5 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">🧊</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 5</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Geladeira, Freezer e Frigobar</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Entenda as diferenças entre os equipamentos (frost free, convencional, inversa) e saiba exatamente como atender cada um deles.</p>
+                </div>
+
+                <!-- Módulo 6 -->
+                <div class="glass p-6 rounded-2xl border-t-4 border-t-brandgreen relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 group-hover:opacity-10 transition">📈</div>
+                    <span class="text-brandgreen font-bold text-sm tracking-widest uppercase mb-2 block">Módulo 6</span>
+                    <h3 class="text-xl font-bold mb-3 text-white">Clientes e Cobrança</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Como precificar seu serviço, anunciar no Google Ads, atender bem pelo WhatsApp e montar uma carteira de clientes fiéis na sua cidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. PRA QUEM É ESSE CURSO -->
+    <section class="bg-midblue py-20 px-6">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Para quem é este curso?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Quem quer uma <strong>nova profissão</strong> do zero</p>
+                </div>
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Quem precisa urgente de <strong>renda extra</strong></p>
+                </div>
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Quem está <strong>desempregado</strong> e quer voltar a ganhar</p>
+                </div>
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Técnicos iniciantes que querem se <strong>atualizar</strong></p>
+                </div>
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Quem quer trabalhar <strong>por conta própria</strong> sem patrão</p>
+                </div>
+                <div class="bg-darkblue rounded-xl p-4 flex items-center gap-4 border border-white/5">
+                    <div class="bg-brandgreen/20 p-2 rounded-full text-brandgreen shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="font-medium">Quem quer ter serviço em <strong>qualquer cidade</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. SEGUNDO BOTÃO DE COMPRA -->
+    <section class="bg-darkblue py-16 px-6 relative text-center">
+        <div class="max-w-3xl mx-auto reveal">
+            <a href="https://pay.cakto.com.br/iczuu7x_876274" class="btn-pulse inline-flex flex-col items-center justify-center w-full md:w-auto bg-brandgreen hover:bg-brandgreenhover text-white rounded-2xl py-5 px-8 min-h-[80px] shadow-2xl transition-all transform hover:scale-105 no-underline">
+                <span class="text-xl md:text-2xl font-black uppercase tracking-wide">🟢 QUERO COMEÇAR AGORA</span>
+                <span class="text-sm md:text-base font-semibold mt-1">Por apenas R$ 297 ou 12x de R$ 29,70</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 11. SEÇÃO DE DEPOIMENTOS -->
+    <section class="bg-midblue py-20 px-6">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">O que dizem nossos alunos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="glass p-6 rounded-2xl relative pt-12">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-gray-500 to-gray-700 border-4 border-midblue flex items-center justify-center text-xl font-bold text-white shadow-lg">
+                        M
+                    </div>
+                    <div class="flex text-brandyellow justify-center mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-4 text-center">"Eu estava desempregado há 8 meses. Comprei o curso com o resto do acerto, em 40 dias já estava fazendo meus primeiros consertos. Hoje tiro mais do que no meu antigo emprego registrado."</p>
+                    <p class="text-center font-bold text-white">- Marcos T., 34 anos</p>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="glass p-6 rounded-2xl relative pt-12">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 border-4 border-midblue flex items-center justify-center text-xl font-bold text-white shadow-lg">
+                        R
+                    </div>
+                    <div class="flex text-brandyellow justify-center mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-4 text-center">"O João explica muito fácil. Eu nunca tinha pegado numa chave de fenda direito. O módulo de gás e vácuo me salvou. Faço renda extra nos finais de semana e já comprei minhas ferramentas."</p>
+                    <p class="text-center font-bold text-white">- Rafael S., 28 anos</p>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="glass p-6 rounded-2xl relative pt-12">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-700 border-4 border-midblue flex items-center justify-center text-xl font-bold text-white shadow-lg">
+                        C
+                    </div>
+                    <div class="flex text-brandyellow justify-center mb-3 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-4 text-center">"Melhor investimento que fiz. Já tinha feito um curso presencial na minha cidade mas era só teoria. No curso do João eu vi a geladeira aberta, ele consertando o BO na hora. Vale cada centavo."</p>
+                    <p class="text-center font-bold text-white">- Carlos E., 41 anos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. COMPARAÇÃO DE INVESTIMENTO -->
+    <section class="bg-darkblue py-20 px-6">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Compare e veja que o risco é zero</h2>
+            
+            <div class="bg-midblue rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                <!-- Outras opções -->
+                <div class="p-6 md:p-8 space-y-4">
+                    <div class="flex justify-between items-center pb-4 border-b border-white/5 opacity-50">
+                        <span class="text-lg font-medium">Faculdade Técnica (2 anos)</span>
+                        <span class="text-lg font-bold line-through text-red-400">R$ 15.000+</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-4 border-b border-white/5 opacity-50">
+                        <span class="text-lg font-medium">Curso Presencial Teórico</span>
+                        <span class="text-lg font-bold line-through text-red-400">R$ 2.000 - R$ 5.000</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-4 border-b border-white/5 opacity-50">
+                        <span class="text-lg font-medium">Aprender Sozinho na Raça</span>
+                        <span class="text-lg font-bold text-red-400">Anos Perdidos + Prejuízos</span>
+                    </div>
+                </div>
+                
+                <!-- Nossa opção -->
+                <div class="bg-gradient-to-r from-brandgreen/20 to-brandgreen/5 p-6 md:p-10 border-t-2 border-brandgreen relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brandgreen text-darkblue text-xs font-black uppercase py-1 px-4 rounded-full">
+                        A Melhor Escolha
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                        <div>
+                            <span class="block text-2xl font-black text-white">Curso Completo do João Marcus</span>
+                            <span class="block text-sm text-brandgreen font-bold mt-1">Acesso Vitalício + Passo a Passo Prático</span>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <span class="block text-sm text-gray-400 line-through mb-1">De R$ 997,00</span>
+                            <span class="block text-4xl font-black text-brandyellow">12x R$29,70</span>
+                            <span class="block text-sm text-white mt-1">ou R$297 à vista</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. GARANTIA -->
+    <section class="bg-brandgreen py-16 px-6 text-darkblue relative overflow-hidden">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 reveal relative z-10">
+            <div class="text-8xl drop-shadow-lg">🛡️</div>
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 uppercase">Garantia Blindada de 7 Dias</h2>
+                <p class="text-lg font-medium text-darkblue/80 leading-relaxed">
+                    O seu risco é absolutamente <strong>ZERO</strong>. Se você entrar no curso, assistir as aulas e por qualquer motivo achar que não é pra você, basta enviar um único email dentro de 7 dias.
+                </p>
+                <p class="text-lg font-bold mt-4">
+                    Devolvemos 100% do seu dinheiro. Sem perguntas. Sem burocracia. Continuamos amigos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. TERCEIRO BOTÃO DE COMPRA + CONTADOR -->
+    <section class="bg-midblue py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto reveal">
+            <div class="mb-8">
+                <p class="text-brandyellow font-bold uppercase tracking-wider text-sm mb-2">⚡ Oferta especial encerra em:</p>
+                <div class="flex justify-center gap-2 md:gap-4 text-white font-mono">
+                    <div class="bg-darkblue rounded-lg p-3 w-16 md:w-20 shadow-inner border border-white/10">
+                        <span id="hours" class="block text-2xl md:text-3xl font-black">23</span>
+                        <span class="text-[10px] text-gray-400 uppercase">Horas</span>
+                    </div>
+                    <div class="text-2xl font-black py-3">:</div>
+                    <div class="bg-darkblue rounded-lg p-3 w-16 md:w-20 shadow-inner border border-white/10">
+                        <span id="minutes" class="block text-2xl md:text-3xl font-black">59</span>
+                        <span class="text-[10px] text-gray-400 uppercase">Min</span>
+                    </div>
+                    <div class="text-2xl font-black py-3">:</div>
+                    <div class="bg-darkblue rounded-lg p-3 w-16 md:w-20 shadow-inner border border-white/10">
+                        <span id="seconds" class="block text-2xl md:text-3xl font-black">59</span>
+                        <span class="text-[10px] text-gray-400 uppercase">Seg</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://pay.cakto.com.br/iczuu7x_876274" class="btn-pulse inline-flex flex-col items-center justify-center w-full md:w-auto bg-brandgreen hover:bg-brandgreenhover text-white rounded-2xl py-6 px-10 min-h-[80px] shadow-2xl transition-all transform hover:scale-105 no-underline mb-4">
+                <span class="text-xl md:text-3xl font-black uppercase tracking-wide">🟢 QUERO MINHA VAGA AGORA</span>
+                <span class="text-sm md:text-lg font-bold mt-1 text-white/90">⚡ Acesso liberado imediatamente após pagamento</span>
+            </a>
+            <p class="text-sm text-gray-400 mt-4">12x de R$ 29,70 no cartão ou R$ 297 à vista no PIX.</p>
+        </div>
+    </section>
+
+    <!-- 15. FAQ (Perguntas Frequentes) -->
+    <section class="bg-darkblue py-20 px-6">
+        <div class="max-w-3xl mx-auto reveal">
+            <h2 class="text-3xl font-bold text-center mb-10">Perguntas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        Preciso ter experiência prévia?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        Não. O curso foi desenhado exatamente para quem tem zero conhecimento. Vamos te ensinar desde o nome das ferramentas até consertos complexos.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        Em quanto tempo começo a ganhar dinheiro?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        Depende da sua dedicação ao assistir às aulas, mas a média de nossos alunos é começar a realizar os primeiros serviços simples cobrando entre 30 a 60 dias de curso.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        Funciona na minha cidade?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        Sim! Geladeira quebra em todo lugar do mundo. Não importa se você mora em capital de 1 milhão de habitantes ou cidade do interior de 5 mil. Sempre tem demanda.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        Quanto tempo tenho acesso ao curso?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        O acesso é Vitalício. Você paga apenas uma vez e pode acessar as aulas para sempre, no seu ritmo, de onde quiser.
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        Como recebo o acesso?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        Imediatamente após a aprovação do pagamento (Pix ou Cartão), você recebe o login e senha no e-mail que você preencheu na hora da compra. Boleto pode levar até 2 dias úteis.
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="faq-item bg-midblue rounded-xl border border-white/10 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none" onclick="toggleFaq(this)">
+                        E se eu não gostar? Tem garantia?
+                        <svg class="faq-icon w-6 h-6 shrink-0 text-brandgreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 bg-darkblue/50 text-gray-300 text-base leading-relaxed">
+                        Sim, você tem 7 dias de garantia incondicional. Se não gostar da didática ou desistir, basta pedir o reembolso na plataforma e devolvemos 100% do valor.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. RODAPÉ -->
+    <footer class="bg-[#050b14] py-8 px-6 text-center border-t border-white/5">
+        <p class="text-sm text-gray-500 mb-2">© 2025 João Marcus Refrigeração - Todos os direitos reservados.</p>
+        <p class="text-xs text-gray-600 max-w-2xl mx-auto">
+            Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Nós fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usar resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.
+        </p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <!-- Coloque seu número aqui no href: https://wa.me/55DDDNUMERO -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.74 10.564 10.564 0 5.827-4.739 10.565-10.564 10.565z"/></svg>
+    </a>
+
+    <!-- SCRIPTS JAVASCRIPT -->
+    <script>
+        // 1. Lógica do Accordion (FAQ)
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isCurrentlyOpen = item.classList.contains('open');
+            
+            // Fecha todos
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('open');
+            });
+            
+            // Abre o que foi clicado (se não estava aberto)
+            if (!isCurrentlyOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // 2. Lógica de Animação de Scroll (Reveal)
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Opcional: parar de observar após animar
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1, // Anima quando 10% do elemento aparece
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+
+        // 3. Lógica do Contador Regressivo (24 horas reiniciando)
+        function startCountdown() {
+            // Verifica se há um tempo salvo no LocalStorage para simular urgência real ao usuário
+            let endTime = localStorage.getItem('refrigeracao_countdown_end');
+            
+            if (!endTime) {
+                // Se não existir, define para daqui a 24 horas (em ms)
+                endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+                localStorage.setItem('refrigeracao_countdown_end', endTime);
+            }
+
+            const updateTimer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    // Reinicia o contador se zerar
+                    endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+                    localStorage.setItem('refrigeracao_countdown_end', endTime);
+                }
+
+                // Cálculo de tempo
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Atualiza o HTML
+                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+
+            }, 1000);
+        }
+
+        // Inicia o contador
+        startCountdown();
+    </script>
+</body>
+</html>
