@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Enfría tu bebida en minutos — Tutorial completo</title>
+<meta name="description" content="Aprende a construir el enfriador casero que se volvió viral. Tutorial paso a paso con medidas exactas. Solo $9.90">
+<meta property="og:title" content="Enfría una bebida en minutos con el motor de un refrigerador viejo">
+<meta property="og:description" content="Tutorial completo con medidas exactas y video paso a paso. $9.90 — acceso inmediato.">
+<meta property="og:image" content="imagens/perfil.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>">
+
+<!-- GOOGLE ANALYTICS — reemplaza con tu ID -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+
+<!-- FACEBOOK PIXEL — reemplaza con tu ID -->
+<!--
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','SEU_PIXEL_ID');fbq('track','PageView');</script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:#07101f;
+  color:#fff;
+  overflow-x:hidden;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ── ANIMAÇÕES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,.5)}50%{box-shadow:0 0 0 18px rgba(0,200,83,0)}}
+@keyframes ice-float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.anim.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* ── URGENCY BAR ── */
+.urgency{
+  background:linear-gradient(90deg,#1a3a6a,#0f2548,#1a3a6a);
+  padding:10px 16px;text-align:center;
+  font-size:13px;font-weight:700;color:rgba(255,255,255,.85);
+  letter-spacing:.3px;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.urgency span{color:#7dd3fc;}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('imagens/perfil.jpg') center center/cover no-repeat;
+  z-index:0;
+}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(7,16,31,.15) 0%,
+    rgba(7,16,31,.3) 30%,
+    rgba(7,16,31,.75) 65%,
+    rgba(7,16,31,1) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:2;
+  margin-top:auto;
+  padding:32px 20px 48px;
+  text-align:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(125,211,252,.12);
+  border:1px solid rgba(125,211,252,.25);
+  color:#7dd3fc;padding:6px 16px;border-radius:99px;
+  font-size:12px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(28px,7.5vw,54px);
+  font-weight:900;line-height:1.08;
+  letter-spacing:-.5px;margin-bottom:14px;
+}
+.hero h1 .ice{
+  color:#7dd3fc;
+  display:inline;
+}
+.hero-sub{
+  font-size:clamp(15px,3.5vw,19px);
+  color:rgba(255,255,255,.7);
+  max-width:500px;margin:0 auto 32px;
+  font-weight:500;
+}
+.hero-sub strong{color:#7dd3fc;font-weight:800;}
+
+/* ── BOTÃO PRINCIPAL ── */
+.btn{
+  display:block;
+  max-width:480px;
+  margin:0 auto;
+  background:linear-gradient(135deg,#00c853,#009624);
+  color:white;text-decoration:none;
+  padding:20px 28px;border-radius:16px;
+  font-size:clamp(17px,4vw,21px);font-weight:900;
+  text-align:center;border:none;cursor:pointer;
+  animation:pulse 2.8s ease-in-out infinite;
+  transition:transform .2s,filter .2s;
+  line-height:1.3;
+}
+.btn:hover,.btn:active{transform:scale(1.02);filter:brightness(1.08);}
+.btn .b-main{display:block;font-size:clamp(18px,4.5vw,24px);}
+.btn .b-price{display:block;font-size:clamp(22px,5.5vw,32px);font-weight:900;letter-spacing:-.5px;margin:3px 0;}
+.btn .b-sub{display:block;font-size:13px;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px;}
+.btn-note{text-align:center;font-size:12px;color:rgba(255,255,255,.4);margin-top:10px;}
+
+/* ── SEÇÃO GENÉRICA ── */
+.sec{padding:60px 20px;}
+.sec-alt{background:#0d1a2e;}
+.wrap{max-width:620px;margin:0 auto;}
+.tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:800;letter-spacing:2px;
+  color:#7dd3fc;text-transform:uppercase;margin-bottom:12px;
+}
+.tag::before{content:'';width:18px;height:2px;background:#7dd3fc;border-radius:99px;}
+.sec-title{
+  font-size:clamp(24px,5.5vw,40px);
+  font-weight:900;margin-bottom:14px;
+  line-height:1.12;letter-spacing:-.5px;
+}
+.sec-title .hi{color:#7dd3fc;}
+.sec-title .gr{color:#4ade80;}
+.sec-sub{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:28px;line-height:1.7;}
+
+/* ── O QUE VOCÊ RECEBE ── */
+.receive-list{display:flex;flex-direction:column;gap:14px;}
+.receive-item{
+  display:flex;align-items:flex-start;gap:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:18px 20px;
+  transition:border-color .2s,background .2s;
+}
+.receive-item:hover{
+  border-color:rgba(125,211,252,.3);
+  background:rgba(125,211,252,.05);
+}
+.receive-icon{
+  font-size:28px;flex-shrink:0;
+  width:50px;height:50px;border-radius:14px;
+  background:rgba(125,211,252,.1);
+  display:flex;align-items:center;justify-content:center;
+}
+.receive-title{font-size:17px;font-weight:800;margin-bottom:4px;}
+.receive-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;}
+
+/* ── COMO FUNCIONA ── */
+.steps{display:flex;flex-direction:column;gap:0;}
+.step{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.step:last-child{border-bottom:none;}
+.step-num{
+  font-size:11px;font-weight:900;letter-spacing:1px;
+  color:#4ade80;background:rgba(74,222,128,.1);
+  border:1px solid rgba(74,222,128,.2);
+  padding:5px 10px;border-radius:99px;
+  white-space:nowrap;flex-shrink:0;margin-top:2px;
+  text-transform:uppercase;
+}
+.step-title{font-size:16px;font-weight:800;margin-bottom:4px;}
+.step-desc{font-size:14px;color:rgba(255,255,255,.55);}
+
+/* ── PRICE BLOCK ── */
+.price-block{
+  background:linear-gradient(135deg,#0d1a2e,#081424);
+  border:1px solid rgba(125,211,252,.2);
+  border-radius:24px;padding:36px 24px;text-align:center;
+  box-shadow:0 0 60px rgba(125,211,252,.06);
+}
+.price-old{
+  font-size:16px;color:rgba(255,255,255,.35);
+  text-decoration:line-through;margin-bottom:4px;
+}
+.price-new{
+  font-size:clamp(52px,14vw,80px);font-weight:900;
+  color:#4ade80;line-height:1;
+  letter-spacing:-2px;
+  text-shadow:0 0 40px rgba(74,222,128,.3);
+}
+.price-cents{font-size:clamp(32px,8vw,48px);vertical-align:super;line-height:1;}
+.price-label{
+  font-size:14px;color:rgba(255,255,255,.5);
+  margin-top:8px;margin-bottom:28px;
+}
+.price-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;}
+.pbadge{
+  display:flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:700;color:rgba(255,255,255,.5);
+}
+
+/* ── GARANTIA ── */
+.guarantee-bar{
+  background:rgba(74,222,128,.06);
+  border:1px solid rgba(74,222,128,.2);
+  border-radius:16px;padding:20px 22px;
+  display:flex;align-items:center;gap:16px;
+  text-align:left;
+}
+.g-icon{font-size:36px;flex-shrink:0;}
+.g-title{font-size:16px;font-weight:800;margin-bottom:3px;}
+.g-text{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5;}
+
+/* ── SOCIAL PROOF ── */
+.proof-row{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+  margin-bottom:32px;
+}
+.proof-pill{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  padding:9px 16px;border-radius:99px;font-size:14px;font-weight:700;
+}
+.proof-pill .n{color:#7dd3fc;font-size:16px;font-weight:900;}
+
+/* ── FAQ ── */
+.faq{display:flex;flex-direction:column;gap:10px;}
+.faq-item{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;overflow:hidden;
+}
+.faq-q{
+  padding:18px 20px;font-weight:700;font-size:15px;
+  cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;color:white;user-select:none;gap:10px;
+  transition:background .2s;
+}
+.faq-q:hover{background:rgba(125,211,252,.05);}
+.faq-icon{color:#7dd3fc;font-size:20px;transition:transform .3s;flex-shrink:0;font-weight:900;}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .3s;
+  font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;padding:0 20px;
+}
+.faq-item.open .faq-a{max-height:200px;padding:0 20px 18px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-item.open{border-color:rgba(125,211,252,.2);}
+
+/* ── VIDEO PLACEHOLDER ── */
+.video-placeholder{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;aspect-ratio:16/9;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;cursor:pointer;transition:border-color .2s;
+  position:relative;overflow:hidden;
+}
+.video-placeholder:hover{border-color:rgba(125,211,252,.3);}
+.play-btn{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(125,211,252,.15);border:2px solid rgba(125,211,252,.4);
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+}
+.video-note{font-size:13px;color:rgba(255,255,255,.4);}
+/* Substitua o placeholder pelo embed real do seu vídeo:
+   <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" ...></iframe>
+   ou <video src="seuvideo.mp4" controls></video>
+*/
+
+/* ── FOOTER ── */
+footer{
+  background:#04090f;border-top:1px solid rgba(255,255,255,.05);
+  padding:32px 20px;text-align:center;
+}
+footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.9;}
+footer a{color:rgba(255,255,255,.25);text-decoration:none;}
+
+/* ── MOBILE ── */
+@media(max-width:480px){
+  .hero-content{padding:24px 16px 40px;}
+  .sec{padding:44px 16px;}
+  .proof-pill{font-size:13px;}
+  .receive-item{padding:14px 16px;}
+  .receive-icon{width:42px;height:42px;font-size:22px;}
+  .guarantee-bar{flex-direction:column;text-align:center;gap:10px;}
+  .price-block{padding:28px 18px;}
+  .price-new{font-size:clamp(48px,16vw,72px);}
+  .step{gap:12px;}
+  .faq-q{font-size:14px;padding:15px 16px;}
+  .faq-a{padding:0 16px;}
+  .faq-item.open .faq-a{padding:0 16px 14px;}
+  .btn{padding:18px 20px;}
+}
+
+/* ── TABLET ── */
+@media(min-width:481px) and (max-width:900px){
+  .hero-content{padding:32px 32px 56px;}
+  .sec{padding:56px 32px;}
+  .wrap{max-width:100%;}
+  .receive-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .guarantee-bar{padding:22px 24px;}
+  .price-block{max-width:520px;margin:0 auto;}
+}
+
+/* ── LANDSCAPE MOBILE ── */
+@media(max-width:812px) and (orientation:landscape){
+  .hero{min-height:auto;}
+  .hero-content{padding:60px 20px 40px;}
+}
+</style>
+</head>
+<body>
+
+<!-- BARRA URGÊNCIA -->
+<div class="urgency">
+  🧊 <span>Oferta por tiempo limitado</span> — Tutorial completo de enfriador casero
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-tag anim">❄️ Tutorial exclusivo</div>
+    <h1 class="anim d1">
+      Aprende a enfriar una bebida<br>
+      en minutos usando solo el<br>
+      <span class="ice">motor de un refrigerador viejo</span>
+    </h1>
+    <p class="hero-sub anim d2">
+      Medidas exactas + video paso a paso.<br>
+      <strong>Lo construyes tú mismo en casa.</strong>
+    </p>
+    <a href="https://pay.hotmart.com/SEULINKAQUI" class="btn anim d3" onclick="trackCTA('hero')">
+      <span class="b-main">🧊 QUIERO EL TUTORIAL</span>
+      <span class="b-price">$9<span style="font-size:.55em;vertical-align:super;">.90</span></span>
+      <span class="b-sub">⚡ Acceso inmediato · Pago único</span>
+    </a>
+    <p class="btn-note anim d4">🔒 Pago 100% seguro · Garantía de 7 días</p>
+  </div>
+</section>
+
+
+
+
+
+<!-- O QUE VOCÊ RECEBE -->
+<section class="sec">
+  <div class="wrap">
+    <div class="tag anim">Lo que recibes</div>
+    <h2 class="sec-title anim d1">Todo lo que necesitas<br>para <span class="gr">construirlo hoy</span></h2>
+
+    <div class="receive-list">
+      <div class="receive-item anim d1">
+        <div class="receive-icon">📐</div>
+        <div>
+          <div class="receive-title">Medidas exactas</div>
+          <div class="receive-desc">Cada dimensión, cada componente. Sin adivinar. Construyes igual al original.</div>
+        </div>
+      </div>
+      <div class="receive-item anim d2">
+        <div class="receive-icon">🎬</div>
+        <div>
+          <div class="receive-title">Video paso a paso</div>
+          <div class="receive-desc">Cada etapa del montaje filmada en detalle. Ves hacerlo antes de hacerlo tú.</div>
+        </div>
+      </div>
+      <div class="receive-item anim d3">
+        <div class="receive-icon">🛒</div>
+        <div>
+          <div class="receive-title">Lista de materiales</div>
+          <div class="receive-desc">Qué comprar, dónde encontrarlo. Sin complicaciones innecesarias.</div>
+        </div>
+      </div>
+      <div class="receive-item anim d4">
+        <div class="receive-icon">⚡</div>
+        <div>
+          <div class="receive-title">Acceso inmediato</div>
+          <div class="receive-desc">Pagas y accedes al instante. Sin esperas, sin envíos, directo a tu celular.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="tag anim">Sin misterios</div>
+    <h2 class="sec-title anim d1">¿Cómo <span class="hi">funciona</span> esto?</h2>
+
+    <div class="steps">
+      <div class="step anim d1">
+        <div class="step-num">Paso 01</div>
+        <div>
+          <div class="step-title">Consigues el motor de un refrigerador viejo</div>
+          <div class="step-desc">Cualquier compresor de nevera en desuso sirve. Lo encuentras barato o lo tienes en casa.</div>
+        </div>
+      </div>
+      <div class="step anim d2">
+        <div class="step-num">Paso 02</div>
+        <div>
+          <div class="step-title">Sigues las medidas exactas del tutorial</div>
+          <div class="step-desc">El tutorial te dice exactamente qué hacer. Sin experiencia previa necesaria.</div>
+        </div>
+      </div>
+      <div class="step anim d3">
+        <div class="step-num">Paso 03</div>
+        <div>
+          <div class="step-title">Montas el enfriador en casa</div>
+          <div class="step-desc">Usas el video como guía visual. Cada paso filmado en detalle.</div>
+        </div>
+      </div>
+      <div class="step anim d4">
+        <div class="step-num">Paso 04</div>
+        <div>
+          <div class="step-title">Enfrías lo que quieras en minutos</div>
+          <div class="step-desc">Sin hielo. Sin esperar. El resultado habla por sí solo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO E CTA -->
+<section class="sec" style="text-align:center;">
+  <div class="wrap">
+    <div class="tag anim" style="justify-content:center;display:flex;">Inversión única</div>
+    <h2 class="sec-title anim d1">Un café cuesta más.<br><span class="gr">El conocimiento, para siempre.</span></h2>
+
+    <div class="price-block anim d2">
+      <div class="price-old">Valor normal: $19.90</div>
+      <div class="price-new">$<span style="font-size:.7em;">9</span><span class="price-cents">.90</span></div>
+      <div class="price-label">pago único · acceso de por vida</div>
+
+      <a href="https://pay.hotmart.com/SEULINKAQUI" class="btn" onclick="trackCTA('price')" style="margin:0 auto 16px;">
+        <span class="b-main">🧊 QUIERO APRENDER — $9.90</span>
+        <span class="b-sub">⚡ Acceso inmediato después del pago</span>
+      </a>
+
+      <div class="guarantee-bar">
+        <div class="g-icon">🛡️</div>
+        <div>
+          <div class="g-title">Garantía de 7 días</div>
+          <div class="g-text">Si no te gusta por cualquier motivo, te devolvemos el 100% del dinero. Sin preguntas, sin burocracia.</div>
+        </div>
+      </div>
+
+      <div class="price-badges">
+        <span class="pbadge">🔒 Pago seguro</span>
+        <span class="pbadge">📱 Funciona en celular</span>
+        <span class="pbadge">♾️ Acceso de por vida</span>
+        <span class="pbadge">⚡ Acceso inmediato</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="tag anim">Dudas frecuentes</div>
+    <h2 class="sec-title anim d1">¿Tienes <span class="hi">preguntas?</span></h2>
+
+    <div class="faq">
+      <div class="faq-item anim d1">
+        <div class="faq-q">¿Necesito experiencia técnica? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No. El tutorial fue hecho para personas sin experiencia. Si puedes seguir instrucciones paso a paso, puedes construir esto.</div>
+      </div>
+      <div class="faq-item anim d2">
+        <div class="faq-q">¿Funciona de verdad o es un truco de edición? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Es real. El sistema usa el principio de refrigeración del compresor para enfriar líquidos directamente. Los millones de personas que vieron el video también se hicieron esa pregunta — y quedaron convencidos.</div>
+      </div>
+      <div class="faq-item anim d3">
+        <div class="faq-q">¿Dónde consigo el motor de refrigerador? <span class="faq-icon">+</span></div>
+        <div class="faq-a">En tiendas de refacciones, mercados de segunda mano, o incluso de una nevera vieja que ya no funcione. El tutorial también te explica qué buscar exactamente.</div>
+      </div>
+      <div class="faq-item anim d4">
+        <div class="faq-q">¿Cómo recibo el tutorial después de pagar? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Inmediatamente después del pago recibes un correo con el acceso. En menos de 5 minutos ya estás viendo el contenido.</div>
+      </div>
+      <div class="faq-item anim d5">
+        <div class="faq-q">¿Y si no me gusta? <span class="faq-icon">+</span></div>
+        <div class="faq-a">7 días de garantía total. Si por cualquier razón no quedas satisfecho, te devolvemos el 100% del dinero. Sin preguntas, sin demoras.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;" class="anim">
+      <a href="https://pay.hotmart.com/SEULINKAQUI" class="btn" onclick="trackCTA('faq')">
+        <span class="b-main">🧊 QUIERO EL TUTORIAL AHORA</span>
+        <span class="b-price">$9<span style="font-size:.55em;vertical-align:super;">.90</span></span>
+        <span class="b-sub">Acceso inmediato · Garantía de 7 días</span>
+      </a>
+      <p class="btn-note" style="margin-top:10px;">🔒 Pago 100% seguro</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2025 — Tutorial Enfriador Casero · Todos los derechos reservados<br>
+    <a href="#">Política de Privacidad</a> · <a href="#">Términos de Uso</a><br><br>
+    Este producto es un tutorial digital de acceso inmediato. Los resultados pueden variar según los materiales disponibles en cada región. Garantía de 7 días.
+  </p>
+</footer>
+
+<script>
+// ── SCROLL ANIMATIONS ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
+},{threshold:.12});
+document.querySelectorAll('.anim').forEach(el=>io.observe(el));
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+// ── CTA TRACKING ──
+function trackCTA(pos){
+  // fbq('track','InitiateCheckout',{content_name:'Tutorial Enfriador',value:9.90,currency:'USD',position:pos});
+  // gtag('event','begin_checkout',{currency:'USD',value:9.90,position:pos});
+  console.log('CTA:',pos);
+}
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
