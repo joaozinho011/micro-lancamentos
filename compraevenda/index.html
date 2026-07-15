@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compramos Geladeiras com Defeito em Varginha - MG</title>
+    <meta name="description" content="Compramos sua geladeira estragada em Varginha. Compressor queimado, não gela? Avaliação grátis, pagamento à vista e nós retiramos no local!">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Archivo (títulos, peso técnico/industrial) + IBM Plex Sans (corpo) + IBM Plex Mono (etiquetas estilo "placa de identificação") -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Archivo', 'sans-serif'],
+                        sans: ['IBM Plex Sans', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'monospace'],
+                    },
+                    colors: {
+                        ink: '#161F29',
+                        steel: {
+                            DEFAULT: '#3E4C5E',
+                            light: '#5C6C80',
+                            50: '#F1F3F5',
+                            100: '#E4E8EC',
+                        },
+                        paper: '#EEF1F0',
+                        signal: {
+                            DEFAULT: '#F5B700',
+                            dark: '#C99000',
+                        },
+                        whatsapp: {
+                            DEFAULT: '#25D366',
+                            hover: '#1DAE55'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-feature-settings: "ss01"; }
+        .tag-label {
+            font-family: 'IBM Plex Mono', monospace;
+            letter-spacing: 0.06em;
+        }
+        /* Etiqueta pendurada - motivo assinatura da página */
+        .service-tag {
+            position: relative;
+            transform: rotate(-4deg);
+        }
+        .service-tag::before {
+            content: '';
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            width: 2px;
+            height: 24px;
+            background: repeating-linear-gradient(to bottom, #16202B 0 4px, transparent 4px 7px);
+        }
+        .service-tag::after {
+            content: '';
+            position: absolute;
+            top: -26px;
+            left: calc(50% - 5px);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #16202B;
+            background: transparent;
+        }
+        .faq-answer {
+            transition: grid-template-rows 0.25s ease;
+            display: grid;
+            grid-template-rows: 0fr;
+        }
+        .faq-answer.open { grid-template-rows: 1fr; }
+        .faq-answer > div { overflow: hidden; }
+        .faq-icon { transition: transform 0.25s ease; }
+        .faq-icon.open { transform: rotate(45deg); }
+        .marquee-track {
+            animation: marquee 22s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+        }
+    </style>
+
+        <!-- ============================================================ -->
+    <!-- GOOGLE ADS TAG                                               -->
+    <!-- ============================================================ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17764321306"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17764321306');
+    </script>
+
+    <!-- Snippet de conversão -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17764321306/jnuMCNPH-MobEJqQ2JZC',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+    
+</head>
+<body class="bg-paper text-ink font-sans antialiased overflow-x-hidden relative pb-20 md:pb-0">
+
+    <!-- ===== CONFIGURAÇÃO DO WHATSAPP ===== -->
+    <script>
+        const waNumber = "5535999369117";
+        const waMessage = encodeURIComponent("Olá! Tenho uma geladeira pra vender e queria saber mais...");
+        const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
+        function openWhatsApp() { window.open(waLink, '_blank'); }
+    </script>
+
+    <!-- ===== BARRA SUPERIOR DE CONFIANÇA ===== -->
+    <div class="bg-ink text-steel-100 text-xs sm:text-sm font-medium">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-3">
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-signal"></span> Atendimento exclusivo em <strong class="text-signal font-bold">Varginha - MG</strong></span>
+            <a href="javascript:void(0)" onclick="openWhatsApp()" class="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                (35) 99936-9117
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="bg-ink text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 14px);"></div>
+
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14 md:py-16 relative z-10">
+            <div class="w-full space-y-6">
+
+                <!-- Badge de localização, bem visível logo de cara -->
+                <div class="inline-flex items-center gap-2 bg-signal text-ink px-4 py-1.5 rounded-full font-bold text-sm shadow-md">
+                    📍 Compra de geladeiras em Varginha - MG
+                </div>
+
+                <h1 class="text-3xl md:text-[2.75rem] font-display font-extrabold leading-[1.08] tracking-tight">
+                    Compramos geladeiras com <span class="text-red-500">defeito</span> em <span class="text-signal">Varginha</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-steel-100 font-medium max-w-lg">
+                    Recebeu um orçamento alto pra trocar o compressor? A gente compra do jeito que ela está.
+                </p>
+
+                <!-- Cartão estilo placa de identificação -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <p class="tag-label text-[11px] text-signal uppercase mb-3">Compramos geladeiras com</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                        <li class="flex items-center gap-2.5 text-[15px] font-medium">
+                            <svg class="w-4 h-4 text-signal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Compressor queimado
+                        </li>
+                        <li class="flex items-center gap-2.5 text-[15px] font-medium">
+                            <svg class="w-4 h-4 text-signal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Motor queimado
+                        </li>
+                        <li class="flex items-center gap-2.5 text-[15px] font-medium">
+                            <svg class="w-4 h-4 text-signal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Vazamento de gás
+                        </li>
+                        <li class="flex items-center gap-2.5 text-[15px] font-medium">
+                            <svg class="w-4 h-4 text-signal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Não gelando / sem funcionar
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Foto, encaixada entre os dois balões -->
+                <div class="relative max-w-sm mx-auto py-2">
+                    <img src="imagens/geladeira.jpg" alt="Geladeira com defeito comprada em Varginha" class="rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover aspect-[4/5]" onerror="this.onerror=null; this.replaceWith(document.getElementById('fridge-fallback'));">
+                    <!-- Etiqueta pendurada -->
+                    <div class="service-tag absolute -top-1 right-6 bg-signal text-ink px-3 py-2 rounded-md shadow-lg z-10">
+                        <p class="tag-label text-[10px] font-semibold leading-tight">AVALIAÇÃO<br>100% GRÁTIS</p>
+                    </div>
+                </div>
+
+                <!-- Ponto Focal Principal -->
+                <div class="bg-signal/10 border-l-4 border-signal p-4 rounded-r-lg">
+                    <h3 class="font-display text-lg font-bold text-signal flex items-center gap-2 mb-1.5">
+                        Nós retiramos no local, em Varginha
+                    </h3>
+                    <p class="text-steel-100 text-sm md:text-[15px] leading-relaxed">
+                        Você não precisa transportar nada pesado. Fazemos a avaliação e, se houver acordo, retiramos a geladeira no endereço combinado — sem custo extra.
+                    </p>
+                </div>
+
+                <a href="javascript:void(0)" onclick="openWhatsApp()" class="inline-flex items-center justify-center w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-base md:text-lg py-4 px-8 rounded-xl shadow-lg shadow-black/20 transition-all hover:scale-[1.02] gap-3 mt-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    Receber uma avaliação grátis
+                </a>
+                <p class="text-sm text-steel-light text-center sm:text-left">Fala direto com a gente no WhatsApp. Sem compromisso.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fallback ilustrado caso a foto real não esteja disponível -->
+    <template id="fridge-fallback-tpl"></template>
+    <div id="fridge-fallback" class="hidden">
+        <svg viewBox="0 0 320 400" class="rounded-2xl shadow-2xl border-4 border-white/10 w-full" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="400" rx="16" fill="#2A3644"/>
+            <rect x="24" y="24" width="272" height="352" rx="10" fill="#3E4C5E"/>
+            <rect x="24" y="24" width="272" height="120" rx="10" fill="#47576B"/>
+            <rect x="44" y="60" width="8" height="48" rx="4" fill="#EEF1F0"/>
+            <rect x="44" y="200" width="8" height="140" rx="4" fill="#EEF1F0"/>
+            <rect x="44" y="160" width="232" height="4" fill="#2A3644"/>
+            <rect x="70" y="60" width="90" height="26" rx="5" fill="#161F29" opacity="0.4"/>
+            <text x="80" y="78" fill="#F5B700" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600">MOD. XYZ-100</text>
+        </svg>
+    </div>
+
+    <!-- ===== FAIXA DE MARCAS (credibilidade rápida) ===== -->
+    <div class="bg-steel-50 border-y border-steel-100 py-3 overflow-hidden">
+        <div class="flex whitespace-nowrap marquee-track">
+            <div class="flex gap-12 pr-12 tag-label text-steel text-sm font-semibold uppercase tracking-wider">
+                <span>Electrolux</span><span>Brastemp</span><span>Consul</span><span>Samsung</span><span>Panasonic</span><span>LG</span><span>Continental</span>
+            </div>
+            <div class="flex gap-12 pr-12 tag-label text-steel text-sm font-semibold uppercase tracking-wider" aria-hidden="true">
+                <span>Electrolux</span><span>Brastemp</span><span>Consul</span><span>Samsung</span><span>Panasonic</span><span>LG</span><span>Continental</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== COMO FUNCIONA ===== -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="tag-label text-signal-dark text-xs uppercase mb-2">Passo a passo</p>
+                <h2 class="text-3xl md:text-4xl font-display font-extrabold text-ink mb-4">Como funciona</h2>
+                <p class="text-lg text-steel max-w-2xl mx-auto">Simples, rápido e sem esforço físico pra você.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex flex-col items-center text-center p-6 bg-paper rounded-2xl relative">
+                    <div class="tag-label w-12 h-12 bg-ink text-signal rounded-lg flex items-center justify-center text-lg font-bold mb-4">01</div>
+                    <h3 class="font-display text-lg font-bold text-ink mb-2">Tire fotos</h3>
+                    <p class="text-steel text-sm leading-relaxed">Fotos e um vídeo curto mostrando o estado geral da geladeira.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 bg-paper rounded-2xl relative">
+                    <div class="tag-label w-12 h-12 bg-ink text-signal rounded-lg flex items-center justify-center text-lg font-bold mb-4">02</div>
+                    <h3 class="font-display text-lg font-bold text-ink mb-2">Envie no WhatsApp</h3>
+                    <p class="text-steel text-sm leading-relaxed">Mande as fotos, a marca e o defeito, se você souber qual é.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 bg-paper rounded-2xl relative">
+                    <div class="tag-label w-12 h-12 bg-ink text-signal rounded-lg flex items-center justify-center text-lg font-bold mb-4">03</div>
+                    <h3 class="font-display text-lg font-bold text-ink mb-2">Receba a proposta</h3>
+                    <p class="text-steel text-sm leading-relaxed">Avaliamos na hora e te enviamos uma oferta de compra.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 bg-ink rounded-2xl relative">
+                    <div class="tag-label w-12 h-12 bg-signal text-ink rounded-lg flex items-center justify-center text-lg font-bold mb-4">04</div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Retirada e pagamento</h3>
+                    <p class="text-steel-100 text-sm leading-relaxed">Se aceitar, agendamos, retiramos no local e você recebe à vista.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <a href="javascript:void(0)" onclick="openWhatsApp()" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsapp-hover text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-colors gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    Quero enviar as fotos agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== O QUE COMPRAMOS ===== -->
+    <section class="py-16 bg-steel-50 border-y border-steel-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <p class="tag-label text-signal-dark text-xs uppercase mb-2">Cobertura</p>
+                <h2 class="text-2xl md:text-3xl font-display font-extrabold text-ink">O que nós compramos?</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <span class="font-semibold text-ink text-sm">Compressor queimado</span>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="font-semibold text-ink text-sm">Motor queimado</span>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    <span class="font-semibold text-ink text-sm">Vazamento de gás</span>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    <span class="font-semibold text-ink text-sm">Não gela</span>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    <span class="font-semibold text-ink text-sm">Frost Free</span>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-steel-100 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-signal-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="font-semibold text-ink text-sm">Qualquer marca</span>
+                </div>
+            </div>
+
+            <p class="tag-label text-steel text-xs uppercase text-center mb-3">Marcas que mais compramos</p>
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                <div class="bg-white rounded-lg p-3 flex items-center justify-center border border-steel-100">
+                    <span class="font-display font-bold text-steel text-sm">Electrolux</span>
+                </div>
+                <div class="bg-white rounded-lg p-3 flex items-center justify-center border border-steel-100">
+                    <span class="font-display font-bold text-steel text-sm">Brastemp</span>
+                </div>
+                <div class="bg-white rounded-lg p-3 flex items-center justify-center border border-steel-100">
+                    <span class="font-display font-bold text-steel text-sm">Consul</span>
+                </div>
+                <div class="bg-white rounded-lg p-3 flex items-center justify-center border border-steel-100">
+                    <span class="font-display font-bold text-steel text-sm">Samsung</span>
+                </div>
+                <div class="bg-white rounded-lg p-3 flex items-center justify-center border border-steel-100">
+                    <span class="font-display font-bold text-steel text-sm">Panasonic</span>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="javascript:void(0)" onclick="openWhatsApp()" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsapp-hover text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-colors gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    A minha está na lista — avaliar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POR QUE VENDER ===== -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-ink rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.06]">
+                    <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                </div>
+                <p class="tag-label text-signal text-xs uppercase mb-3 relative z-10">Vale a pena?</p>
+                <h2 class="text-2xl md:text-3xl font-display font-extrabold text-white mb-6 relative z-10">Consertar ou vender?</h2>
+                <div class="space-y-4 text-lg text-steel-100 relative z-10">
+                    <p>Em muitos casos, o orçamento pra trocar o compressor ou reparar um vazamento crônico passa de <strong class="text-white">R$ 1.000</strong> — e o equipamento ainda pode voltar a dar problema.</p>
+                    <p>Se você já decidiu que não vale a pena consertar, nós somos a solução: avaliação gratuita e compra do equipamento no estado em que ele estiver.</p>
+                    <p class="font-semibold text-signal">Você se livra da sucata, ganha um dinheiro na hora e não carrega peso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="py-16 bg-paper border-t border-steel-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <p class="tag-label text-signal-dark text-xs uppercase mb-2">Dúvidas rápidas</p>
+                <h2 class="text-3xl font-display font-extrabold text-ink mb-4">Perguntas frequentes</h2>
+            </div>
+
+            <div class="space-y-3" id="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Quanto vocês pagam pela geladeira?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">O valor depende do modelo, marca e estado geral do equipamento. Fazemos uma avaliação justa a partir das fotos e vídeos que você envia pelo WhatsApp.</div></div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Preciso levar a geladeira até vocês?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">Não! Nós retiramos no local. Nossa equipe vai até o endereço combinado em Varginha e faz todo o trabalho pesado.</div></div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Recebo o pagamento na hora?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">Sim! Pagamos à vista, geralmente via PIX, no momento em que retiramos o equipamento na sua casa.</div></div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Vocês compram qualquer marca?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">Sim, compramos as principais marcas do mercado: Electrolux, Brastemp, Consul, Samsung, Panasonic e outras.</div></div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Mesmo com o compressor queimado, sem funcionar?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">Sim, com certeza — esse é o nosso foco principal. Compramos geladeiras mesmo sem funcionar de forma alguma.</div></div>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div class="bg-white border border-steel-100 rounded-xl shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center gap-4" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-ink">Atendem toda a cidade de Varginha?</span>
+                        <svg class="faq-icon w-5 h-5 text-steel shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="px-6 pb-4 text-steel">Sim, fazemos a retirada em todos os bairros de Varginha - MG sem nenhum custo adicional.</div></div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-steel mb-4">Sua dúvida não está aqui? Manda uma mensagem agora.</p>
+                <a href="javascript:void(0)" onclick="openWhatsApp()" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsapp-hover text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-colors gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    Tirar dúvida no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-ink text-steel-100 py-10 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-white font-display font-bold text-xl mb-3">Compramos Geladeiras</h3>
+                    <p class="text-sm leading-relaxed">Compra de refrigeradores com defeito em Varginha - MG. Avaliação rápida, retirada no local e pagamento justo.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-display font-bold text-lg mb-3">Contato</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <svg class="w-4 h-4 text-whatsapp shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                            WhatsApp: (35) 99936-9117
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <svg class="w-4 h-4 text-signal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Atendimento exclusivo em Varginha
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-display font-bold text-lg mb-3">Horário</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>Segunda a sábado</li>
+                        <li>08h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center text-xs text-steel-light mb-10 md:mb-0">
+                &copy; 2026 Compramos Geladeiras Varginha. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP (DESKTOP) -->
+    <a href="javascript:void(0)" onclick="openWhatsApp()" class="hidden md:flex fixed bottom-6 right-6 z-50 bg-whatsapp text-white p-4 rounded-full shadow-lg hover:bg-whatsapp-hover transition-transform hover:scale-110 items-center justify-center" aria-label="Falar no WhatsApp">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </a>
+
+    <!-- BARRA FIXA WHATSAPP (MOBILE) -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-steel-100 p-3 z-50 shadow-[0_-8px_15px_-3px_rgba(0,0,0,0.1)]">
+        <a href="javascript:void(0)" onclick="openWhatsApp()" class="flex items-center justify-center w-full bg-whatsapp text-white font-bold text-base py-3.5 px-4 rounded-xl shadow-lg active:scale-95 transition-transform gap-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Chamar no WhatsApp
+        </a>
+    </div>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('#faq-list .faq-answer').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('#faq-list .faq-icon').forEach(el => el.classList.remove('open'));
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>
