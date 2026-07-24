@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrigeração Varginha</title>
+
+    <!-- ============================================================ -->
+    <!-- DECIDE A VARIANTE (A ou B) ANTES DE QUALQUER COISA SER DESENHADA -->
+    <!-- Sorteio 50%/50%. Se o visitante já veio antes, mantém a mesma  -->
+    <!-- variante (guardada no localStorage do navegador dele).        -->
+    <!-- ============================================================ -->
+    <script>
+    (function () {
+        // Forçar uma variante manualmente para conferir/testar:
+        // seusite.com/?v=A  ou  seusite.com/?v=B
+        // (isso NÃO altera o sorteio normal dos outros visitantes)
+        var forcado = null;
+        try {
+            forcado = new URLSearchParams(window.location.search).get('v');
+        } catch (e) {}
+
+        var v;
+        if (forcado === 'A' || forcado === 'B') {
+            v = forcado;
+        } else {
+            try { v = localStorage.getItem('mundial_ab_variant'); } catch (e) {}
+            if (v !== 'A' && v !== 'B') {
+                v = Math.random() < 0.5 ? 'A' : 'B';
+                try { localStorage.setItem('mundial_ab_variant', v); } catch (e) {}
+            }
+        }
+        document.documentElement.setAttribute('data-variant', v);
+    })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:   #0F2027;
+            --ice:    #7DD8E8;
+            --orange: #FF5A1F;
+            --frost:  #F7FAFB;
+            --slate:  #1C2B33;
+        }
+
+        body { margin: 0; background: #f8fafc; padding-bottom: 84px; }
+        @media (min-width: 768px) { body { padding-bottom: 0; } }
+
+        /* Só mostra a variante sorteada; a outra fica fora da tela */
+        [data-variant="A"] .variant-b { display: none !important; }
+        [data-variant="B"] .variant-a { display: none !important; }
+
+        .variant-a { font-family: 'Roboto', sans-serif; color: #1e293b; }
+        .variant-b { font-family: 'Inter', sans-serif; color: var(--slate); background: var(--frost); }
+        .display { font-family: 'Space Grotesk', sans-serif; }
+
+        /* ---- Estilos da variante A (original) ---- */
+        .hero-bg-a {
+            background-image: linear-gradient(to right, rgba(0, 30, 60, 0.95) 0%, rgba(0, 30, 60, 0.75) 50%, rgba(0, 30, 60, 0.3) 100%),
+            url('img/varginha.jpg');
+            background-size: cover;
+            background-position: center top;
+        }
+        @media (min-width: 768px) { .hero-bg-a { background-attachment: fixed; } }
+        .service-card:hover .card-icon { transform: scale(1.1) rotate(-5deg); }
+
+        /* ---- Estilos da variante B (nova) — visual de conversa de WhatsApp ---- */
+        :root {
+            --wa-teal:  #075E54;
+            --wa-bg:    #E7DFD5;
+            --wa-out:   #DCF8C6;
+            --wa-text:  #111B21;
+        }
+        .variant-b { background: var(--wa-bg); }
+        .vb-phone {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--wa-bg);
+            min-height: 100vh;
+        }
+        @media (min-width: 640px) {
+            .vb-phone { box-shadow: 0 0 40px rgba(0,0,0,0.15); min-height: auto; margin-top: 24px; margin-bottom: 24px; border-radius: 18px; overflow: hidden; }
+        }
+        .vb-cover { position: relative; height: 220px; }
+        .vb-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .vb-cover-shade {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(7,94,84,0.92) 0%, rgba(7,94,84,0.15) 55%, rgba(0,0,0,0.1) 100%);
+        }
+        .vb-cover-info {
+            position: absolute; left: 16px; right: 16px; bottom: 14px;
+            display: flex; align-items: center; gap: 12px; color: #fff;
+        }
+        .vb-avatar {
+            width: 46px; height: 46px; border-radius: 999px; background: var(--wa-teal);
+            display: flex; align-items: center; justify-content: center; font-size: 20px;
+            border: 2px solid #fff; flex-shrink: 0;
+        }
+        .vb-dot { width: 8px; height: 8px; border-radius: 999px; background: #4ADE80; display: inline-block; margin-right: 5px; }
+
+        .vb-chat { padding: 18px 14px 6px; }
+        .vb-bubble { max-width: 82%; padding: 10px 14px; border-radius: 12px; font-size: 14.5px; line-height: 1.4; margin-bottom: 8px; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+        .vb-bubble-in  { background: #fff; color: var(--wa-text); border-top-left-radius: 2px; }
+        .vb-bubble-out { background: var(--wa-out); color: var(--wa-text); border-top-right-radius: 2px; margin-left: auto; }
+
+        .vb-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 4px 14px 16px; }
+        .vb-chip {
+            background: #fff; border: 1px solid #d8d0c5; color: var(--wa-text);
+            font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px;
+            display: inline-flex; align-items: center; gap: 6px; transition: background .15s;
+        }
+        .vb-chip:active { background: #f1f1ef; }
+
+        .vb-cta {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: #25D366; color: #fff; font-weight: 700; font-size: 17px;
+            margin: 4px 14px 4px; padding: 15px 18px; border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(37,211,102,0.35);
+        }
+        .vb-subcta { text-align: center; font-size: 12px; color: #5b6b66; margin-bottom: 18px; }
+
+        .vb-trust { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; padding: 0 14px 18px; text-align: center; }
+        .vb-trust div { background: #fff; border-radius: 10px; padding: 12px 6px; font-size: 11.5px; font-weight: 600; color: var(--wa-teal); }
+        .vb-trust i { display: block; font-size: 16px; margin-bottom: 5px; }
+
+        .vb-marcas { text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #7c8a85; padding: 0 14px 18px; font-weight: 700; }
+
+        .vb-local { background: #fff; margin: 0 14px 18px; border-radius: 12px; padding: 16px; }
+        .vb-local p { font-size: 13px; color: #4b5a55; margin-bottom: 10px; }
+        .vb-local iframe { width: 100%; height: 180px; border-radius: 8px; border: 0; margin-top: 10px; }
+        .vb-local a { color: var(--wa-teal); font-weight: 700; font-size: 15px; }
+
+        .vb-footer { text-align: center; font-size: 11px; color: #8a978f; padding: 8px 14px 90px; }
+
+        /* Etiqueta discreta pra você conferir qual variante carregou */
+        .vb-debug, .va-debug {
+            position: fixed; bottom: 6px; left: 8px; font-family: monospace; font-size: 10px;
+            color: #64748b; opacity: .45; z-index: 60; pointer-events: none;
+        }
+
+        /* ---- Compartilhado ---- */
+        .pulse-btn { animation: pulse-shadow 2.2s infinite; }
+        @keyframes pulse-shadow {
+            0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+            70%  { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .pulse-btn { animation: none; }
+        }
+    </style>
+
+    <!-- ============================================================ -->
+    <!-- GOOGLE ADS TAG (compartilhada pelas duas variantes)          -->
+    <!-- ============================================================ -->
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18344978960"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18344978960');
+</script>
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') { window.location = url; }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18344978960/jnuMCNPH-MobEJqQ2JZC',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- VARIANTE A — página original                                     -->
+<!-- ================================================================ -->
+<div class="variant-a antialiased">
+
+    <div class="bg-blue-900 text-white py-2 text-center text-xs font-bold uppercase tracking-wider px-2">
+        <i class="fa-solid fa-shield-halved text-green-400 mr-1"></i> Garantia nos serviços • Atendemos Varginha-MG
+    </div>
+
+    <nav class="bg-white shadow-lg sticky top-0 z-40 h-20 flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center text-white shadow-blue-500/50 shadow-md">
+                    <i class="fa-solid fa-snowflake text-xl"></i>
+                </div>
+                <div class="leading-tight">
+                    <h1 class="text-xl font-black text-slate-800 tracking-tight">MUNDIAL<span class="text-blue-600">REFRIGERAÇÃO</span></h1>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Assistência Técnica</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <div class="text-right">
+                    <p class="text-xs text-slate-500 font-semibold uppercase">Plantão Técnico</p>
+                    <a href="tel:5535984135674" onclick="gtag_report_conversion('tel:5535984135674')" class="text-lg font-bold text-blue-900 hover:text-blue-600">(35) 98413-5674</a>
+                </div>
+                <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+                   onclick="gtag_report_conversion(this.href)"
+                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2.5 px-6 rounded-full shadow-lg transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Agendar Visita
+                </a>
+            </div>
+            <a href="tel:5535984135674"
+               onclick="gtag_report_conversion('tel:5535984135674')"
+               class="md:hidden w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center text-blue-700 bg-slate-50 active:bg-blue-100">
+               <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-bg-a text-white relative py-20 lg:py-32 flex items-center min-h-[500px]">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-blue-600/80 px-3 py-1 rounded-full text-xs font-bold mb-6">
+                    <i class="fa-solid fa-location-dot"></i> Orçamento sem Compromisso em VARGINHA
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    Sua Geladeira ou Máquina de lavar parou?<br>
+                    <span class="text-blue-300">Nós resolvemos.</span>
+                </h2>
+                <p class="text-lg text-slate-200 mb-8 max-w-lg font-medium">
+                    Técnicos especialistas em <strong>Brastemp, Electrolux e Consul</strong>. Atendimento imediato em Varginha.
+                </p>
+                <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+                   onclick="gtag_report_conversion(this.href)"
+                   class="bg-[#25D366] hover:bg-[#20ba5a] text-white text-lg font-bold py-4 px-8 rounded-lg shadow-xl pulse-btn flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    CHAMAR TÉCNICO
+                </a>
+            </div>
+            <div class="hidden md:block">
+                <div class="bg-white/95 p-8 rounded-2xl shadow-2xl max-w-sm ml-auto border-t-8 border-blue-600">
+                    <h3 class="font-bold text-xl mb-2">Por que confiar?</h3>
+                    <ul class="space-y-4 mt-4 text-slate-700">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-600"></i> Mais de 20 anos em Varginha</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-600"></i> Peças originais com garantia</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-600"></i> Preço justo e transparente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+    </header>
+
+    <section class="py-8 border-b border-slate-200 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Trabalhamos com:</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 grayscale opacity-60">
+                <span class="text-xl md:text-2xl font-black text-slate-700">BRASTEMP</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">ELECTROLUX</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">CONSUL</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 px-4 container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-slate-800 mb-4">Nossos Serviços</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Manutenção completa para sua casa ou comércio.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="service-card bg-white rounded-xl shadow-lg border p-8 hover:shadow-xl transition">
+                <div class="card-icon w-14 h-14 bg-blue-600 text-white rounded-lg flex items-center justify-center text-2xl mb-6 shadow-md">
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Geladeiras</h3>
+                <p class="text-slate-500 text-sm mb-6">Não gela? Barulho estranho? Borracha solta? Resolvemos tudo.</p>
+                <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+                   onclick="gtag_report_conversion(this.href)"
+                   class="text-blue-600 font-bold text-sm uppercase tracking-wide">Pedir Orçamento</a>
+            </div>
+            <div class="service-card bg-white rounded-xl shadow-lg border p-8 hover:shadow-xl transition">
+                <div class="card-icon w-14 h-14 bg-blue-600 text-white rounded-lg flex items-center justify-center text-2xl mb-6 shadow-md">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Máquinas de Lavar</h3>
+                <p class="text-slate-500 text-sm mb-6">Não centrifuga, vazamento ou painel queimado. Conserto rápido.</p>
+                <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+                   onclick="gtag_report_conversion(this.href)"
+                   class="text-blue-600 font-bold text-sm uppercase tracking-wide">Pedir Orçamento</a>
+            </div>
+            <div class="service-card bg-white rounded-xl shadow-lg border p-8 hover:shadow-xl transition">
+                <div class="card-icon w-14 h-14 bg-blue-600 text-white rounded-lg flex items-center justify-center text-2xl mb-6 shadow-md">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Freezers</h3>
+                <p class="text-slate-500 text-sm mb-6">Manutenção e reparo em freezers horizontais e verticais.</p>
+                <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+                   onclick="gtag_report_conversion(this.href)"
+                   class="text-blue-600 font-bold text-sm uppercase tracking-wide">Pedir Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-900 py-16 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/3">
+                    <div class="inline-block bg-blue-600 text-xs font-bold px-2 py-1 rounded mb-4">LOCALIZAÇÃO</div>
+                    <h2 class="text-3xl font-bold mb-6">Atendemos Varginha de ponta a ponta</h2>
+                    <p class="text-slate-400 mb-6">Atendimento rápido nos principais bairros da cidade.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-map-location-dot text-blue-400"></i>Sion, Centro, Bom Pastor</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-map-location-dot text-blue-400"></i>Santa Maria, Santana, Vila Paiva</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-green-400"></i>
+                            <span class="font-bold text-lg">(35) 98413-5674</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-2/3 h-[300px] bg-slate-800 rounded-xl overflow-hidden border border-slate-700 relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59370.45703730791!2d-45.52240485136717!3d-21.56039739999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ca935fe480be91%3A0x72e76f1f58c4a4f8!2sMundial%20Refrigeração!5e0!3m2!1spt-BR!2sbr!4v1764729870998!5m2!1spt-BR!2sbr"
+                            width="600" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    <div class="absolute bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg">
+                        Base Operacional Varginha
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-10 text-center">
+        <div class="container mx-auto px-4">
+            <h3 class="font-black text-slate-800 text-lg mb-2">MUNDIAL<span class="text-blue-600">REFRIGERAÇÃO</span></h3>
+            <p class="text-slate-500 text-sm mb-6">Qualidade e confiança há mais de 20 anos.</p>
+            <p class="text-xs text-slate-400">&copy; 2025 Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-lg flex h-[70px] z-50">
+        <a href="tel:5535984135674"
+           onclick="gtag_report_conversion('tel:5535984135674')"
+           class="flex-1 flex flex-col items-center justify-center border-r border-slate-100 active:bg-slate-50 transition text-slate-700">
+            <i class="fa-solid fa-phone text-xl mb-1"></i>
+            <span class="text-[10px] font-bold uppercase">Ligar Agora</span>
+        </a>
+        <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+           onclick="gtag_report_conversion(this.href)"
+           class="flex-1 flex flex-col items-center justify-center bg-[#25D366] text-white active:bg-[#1eab52] transition">
+            <i class="fa-brands fa-whatsapp text-2xl mb-1"></i>
+            <span class="text-[10px] font-bold uppercase">WhatsApp</span>
+        </a>
+    </div>
+
+    <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+       onclick="gtag_report_conversion(this.href)"
+       class="hidden md:flex fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full items-center justify-center shadow-xl hover:scale-110 hover:bg-[#1eab52] transition z-50 pulse-btn">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <div class="va-debug">Variante A</div>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- VARIANTE B — simulação de conversa de WhatsApp, mobile-first,    -->
+<!-- 100% focada em levar o clique pro WhatsApp                       -->
+<!-- ================================================================ -->
+<div class="variant-b antialiased">
+<div class="vb-phone">
+
+    <!-- Capa: foto de Varginha bem visível assim que abre -->
+    <div class="vb-cover">
+        <img src="img/varginha.jpg" alt="Varginha - MG">
+        <div class="vb-cover-shade"></div>
+        <div class="vb-cover-info">
+            <div class="vb-avatar"><i class="fa-solid fa-snowflake"></i></div>
+            <div>
+                <p class="font-bold text-base leading-tight">Mundial Refrigeração</p>
+                <p class="text-xs opacity-90"><span class="vb-dot"></span>online agora · Varginha-MG</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulação da conversa -->
+    <div class="vb-chat">
+        <div class="vb-bubble vb-bubble-in">Oi! Minha geladeira parou de gelar 😟</div>
+        <div class="vb-bubble vb-bubble-out">Boa notícia: a gente atende Varginha ainda hoje 🔧❄️</div>
+        <div class="vb-bubble vb-bubble-out">Me conta qual o problema que já te passo um orçamento sem compromisso</div>
+    </div>
+
+    <!-- Respostas rápidas — cada uma já abre o WhatsApp com o assunto certo -->
+    <div class="vb-chips">
+        <a class="vb-chip" data-wa-tipo="Geladeira" href="https://wa.me/5535999369117" onclick="gtag_report_conversion(this.href)">🧊 Geladeira</a>
+        <a class="vb-chip" data-wa-tipo="Máquina de lavar" href="https://wa.me/5535999369117" onclick="gtag_report_conversion(this.href)">🧺 Máquina de lavar</a>
+        <a class="vb-chip" data-wa-tipo="Freezer" href="https://wa.me/5535999369117" onclick="gtag_report_conversion(this.href)">❄️ Freezer</a>
+    </div>
+
+    <!-- CTA principal -->
+    <a class="vb-cta pulse-btn" href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..." onclick="gtag_report_conversion(this.href)">
+        <i class="fa-brands fa-whatsapp text-2xl"></i> Continuar no WhatsApp
+    </a>
+    <p class="vb-subcta">Resposta rápida · Sem compromisso</p>
+
+    <!-- Confiança -->
+    <div class="vb-trust">
+        <div><i class="fa-solid fa-shield-halved"></i>Garantia por escrito</div>
+        <div><i class="fa-solid fa-award"></i>+20 anos em Varginha</div>
+        <div><i class="fa-solid fa-star"></i>Peças originais</div>
+    </div>
+
+    <div class="vb-marcas">Brastemp · Electrolux · Consul</div>
+
+    <!-- Localização -->
+    <div class="vb-local">
+        <p><i class="fa-solid fa-map-location-dot mr-1"></i>Atendemos Sion, Centro, Bom Pastor, Santa Maria, Santana e Vila Paiva</p>
+        <a href="tel:5535984135674" onclick="gtag_report_conversion('tel:5535984135674')"><i class="fa-solid fa-phone mr-1"></i>(35) 98413-5674</a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59370.45703730791!2d-45.52240485136717!3d-21.56039739999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ca935fe480be91%3A0x72e76f1f58c4a4f8!2sMundial%20Refrigeração!5e0!3m2!1spt-BR!2sbr!4v1764729870998!5m2!1spt-BR!2sbr"
+                loading="lazy"></iframe>
+    </div>
+
+    <p class="vb-footer">MUNDIAL REFRIGERAÇÃO · Qualidade e confiança há mais de 20 anos &copy; 2025</p>
+
+    <div class="vb-debug">Variante B</div>
+</div>
+
+<!-- Barra fixa mobile -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-lg flex h-[70px] z-50">
+    <a href="tel:5535984135674"
+       onclick="gtag_report_conversion('tel:5535984135674')"
+       class="flex-1 flex flex-col items-center justify-center border-r border-slate-100 active:bg-slate-50 transition text-slate-700">
+        <i class="fa-solid fa-phone text-xl mb-1"></i>
+        <span class="text-[10px] font-bold uppercase">Ligar Agora</span>
+    </a>
+    <a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+       onclick="gtag_report_conversion(this.href)"
+       class="flex-1 flex flex-col items-center justify-center bg-[#25D366] text-white active:bg-[#1eab52] transition">
+        <i class="fa-brands fa-whatsapp text-2xl mb-1"></i>
+        <span class="text-[10px] font-bold uppercase">WhatsApp</span>
+    </a>
+</div>
+
+<a href="https://wa.me/5535999369117?text=Opa%2C%20preciso%20de%20um%20Or%C3%A7amento..."
+   onclick="gtag_report_conversion(this.href)"
+   class="hidden md:flex fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full items-center justify-center shadow-xl hover:scale-110 hover:bg-[#1eab52] transition z-50 pulse-btn">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+</a>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- RASTREAMENTO — grava no Supabase usando somente a chave anônima  -->
+<!-- (que só tem permissão de INSERT, igual à sua estrutura original) -->
+<!-- ================================================================ -->
+<script>
+(function () {
+
+    var SUPABASE_URL  = 'https://elyftrymxkadcnddxtvn.supabase.co';
+    var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVseWZ0cnlteGthZGNuZGR4dHZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyOTMyODYsImV4cCI6MjA3OTg2OTI4Nn0.YgQZdXqnIoR1T1i5eQ1Kl6vCIc6PeOTEw0_iiW4T21o';
+    var WHATSAPP_NUM  = '5535999369117';
+
+    function getParam(name) {
+        try {
+            var params = new URLSearchParams(window.location.search);
+            return params.get(name) || params.get(name.toUpperCase()) || null;
+        } catch (e) { return null; }
+    }
+
+    function gerarProtocolId() {
+        var num = Math.floor(10000 + Math.random() * 90000);
+        return 'ORC-' + num;
+    }
+
+    function getOrigem(gclid) {
+        if (gclid) return 'google_ads';
+        var ref = document.referrer || '';
+        if (ref.indexOf('google') !== -1) return 'google_organico';
+        if (ref.indexOf('facebook') !== -1 || ref.indexOf('instagram') !== -1) return 'social';
+        if (ref.length > 0) return 'referral';
+        return 'direto';
+    }
+
+    function getVariant() {
+        return document.documentElement.getAttribute('data-variant') || 'A';
+    }
+
+    function getDeviceType() {
+        var ua = navigator.userAgent || '';
+        if (/ipad|tablet|(android(?!.*mobile))/i.test(ua)) return 'tablet';
+        if (/mobile|iphone|ipod|android/i.test(ua)) return 'celular';
+        return 'desktop';
+    }
+
+    function getBrowser() {
+        var ua = navigator.userAgent || '';
+        if (/edg\//i.test(ua)) return 'Edge';
+        if (/chrome|crios/i.test(ua) && !/opr\//i.test(ua)) return 'Chrome';
+        if (/firefox|fxios/i.test(ua)) return 'Firefox';
+        if (/safari/i.test(ua) && !/chrome|crios/i.test(ua)) return 'Safari';
+        if (/opr\//i.test(ua)) return 'Opera';
+        return 'Outro';
+    }
+
+    function getSO() {
+        var ua = navigator.userAgent || '';
+        if (/android/i.test(ua)) return 'Android';
+        if (/iphone|ipad|ipod/i.test(ua)) return 'iOS';
+        if (/windows/i.test(ua)) return 'Windows';
+        if (/mac os/i.test(ua)) return 'macOS';
+        if (/linux/i.test(ua)) return 'Linux';
+        return 'Outro';
+    }
+
+    // Localização aproximada por IP (serviço gratuito de terceiros).
+    // Se ele falhar, o resto do rastreamento continua normalmente.
+    function getGeo(callback) {
+        fetch('https://ipwho.is/')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data && data.success !== false) {
+                    callback({
+                        ip: data.ip || null,
+                        pais: data.country || null,
+                        regiao: data.region || null,
+                        cidade: data.city || null
+                    });
+                } else { callback({}); }
+            })
+            .catch(function () { callback({}); });
+    }
+
+    // Grava o acesso (page view) na tabela `leads` — só INSERT, como antes
+    function salvarLead(protocolId, gclid, variant, geo) {
+        var payload = {
+            protocol_id         : protocolId,
+            gclid               : gclid,
+            origem              : getOrigem(gclid),
+            pagina              : window.location.pathname || '/',
+            variant             : variant,
+            dispositivo         : getDeviceType(),
+            navegador           : getBrowser(),
+            sistema_operacional : getSO(),
+            pais                : geo.pais || null,
+            regiao              : geo.regiao || null,
+            cidade              : geo.cidade || null,
+            ip                  : geo.ip || null,
+            data_hora           : new Date().toISOString()
+        };
+
+        fetch(SUPABASE_URL + '/rest/v1/leads', {
+            method  : 'POST',
+            headers : {
+                'Content-Type'  : 'application/json',
+                'apikey'        : SUPABASE_ANON,
+                'Authorization' : 'Bearer ' + SUPABASE_ANON,
+                'Prefer'        : 'return=minimal'
+            },
+            body: JSON.stringify(payload)
+        }).then(function (res) {
+            if (res.ok) {
+                console.log('[Rastreamento] Lead salvo:', protocolId, '| Variante:', variant);
+            } else {
+                res.text().then(function (t) { console.warn('[Rastreamento] Erro ao salvar lead:', t); });
+            }
+        }).catch(function (err) {
+            console.warn('[Rastreamento] Falha de rede (lead):', err);
+        });
+    }
+
+    // Grava a conversão (clique no WhatsApp) na tabela `whatsapp_clicks` — só INSERT
+    function salvarWhatsAppClick(protocolId, variant, tipoEquipamento) {
+        var payload = {
+            protocol_id      : protocolId,
+            variant          : variant,
+            pagina           : window.location.pathname || '/',
+            tipo_equipamento : tipoEquipamento || null,
+            criado_em        : new Date().toISOString()
+        };
+
+        fetch(SUPABASE_URL + '/rest/v1/whatsapp_clicks', {
+            method   : 'POST',
+            keepalive: true,
+            headers  : {
+                'Content-Type'  : 'application/json',
+                'apikey'        : SUPABASE_ANON,
+                'Authorization' : 'Bearer ' + SUPABASE_ANON,
+                'Prefer'        : 'return=minimal'
+            },
+            body: JSON.stringify(payload)
+        }).catch(function (err) {
+            console.warn('[Rastreamento] Falha ao registrar clique no WhatsApp:', err);
+        });
+    }
+
+    function atualizarLinksWhatsApp(protocolId, variant) {
+        var mensagemPadrao = encodeURIComponent('Opa, preciso de um Orçamento... - Nº orçamento: ' + protocolId);
+
+        var links = document.querySelectorAll('a[href*="wa.me"]');
+        links.forEach(function (link) {
+            var tipo = link.getAttribute('data-wa-tipo');
+            var mensagem = tipo
+                ? encodeURIComponent('Opa, preciso de um orçamento para: ' + tipo + ' - Nº orçamento: ' + protocolId)
+                : mensagemPadrao;
+            link.href = 'https://wa.me/' + WHATSAPP_NUM + '?text=' + mensagem;
+            link.addEventListener('click', function () {
+                salvarWhatsAppClick(protocolId, variant, tipo || null);
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var gclid      = getParam('gclid');
+        var protocolId = gerarProtocolId();
+        var variant    = getVariant();
+
+        getGeo(function (geo) {
+            salvarLead(protocolId, gclid, variant, geo);
+        });
+
+        atualizarLinksWhatsApp(protocolId, variant);
+
+        try {
+            sessionStorage.setItem('mundial_protocol', protocolId);
+            sessionStorage.setItem('mundial_variant', variant);
+            if (gclid) sessionStorage.setItem('mundial_gclid', gclid);
+        } catch (e) {}
+    });
+
+})();
+</script>
+
+</body>
+</html>
