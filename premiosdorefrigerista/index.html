@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Presente do Refrigerista</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     META PIXEL — SOMENTE PAGEVIEW (padrão, sem eventos customizados)
+     Troque SEU_PIXEL_ID_AQUI pelo ID real do seu Pixel.
+     ============================================================ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID_AQUI');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
+/></noscript>
+<!-- ============================================================ -->
+
+<style>
+  :root{
+    --bg: #212b36;
+    --bg-2: #212b36;
+    --panel: #000000;
+    --panel-2: #212b36;
+    --green: #408559;
+    --green-light: #d2f9d1;
+    --green-dark: #2f6b45;
+    --green-glow: rgba(64,133,89,.4);
+    --green-text: #1b201b;
+    --gold: #eab676;
+    --text: #f4f6f5;
+    --text-dim: #9aa0a3;
+    --border: #2e3a47;
+    --font-display: 'Montserrat', 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Montserrat', 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html,body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .app{
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background:
+      radial-gradient(600px 300px at 50% -60px, rgba(255,255,255,.04), transparent 70%),
+      var(--bg);
+    position: relative;
+    padding-bottom: 44px;
+  }
+
+  /* ---------- Header ---------- */
+  header.topbar{
+    background: linear-gradient(180deg, #000 0%, #060a08 100%);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 15px 18px;
+    border-bottom: 1px solid #16201c;
+    position: sticky; top:0; z-index: 50;
+  }
+  .brand{ display:flex; align-items:center; }
+  .brand img.brand-logo-only{
+    height:34px; width:auto; max-width:160px;
+    border-radius:6px; object-fit:contain;
+  }
+  .menu-icon{ font-size:1.35rem; color:#fff; opacity:.8; }
+
+  /* ---------- Foto do prêmio (única, tamanho sempre travado) ---------- */
+  .hero{
+    position:relative;
+    width:100%;
+    aspect-ratio: 4/3.1;   /* trava a proporção do quadro, não importa o tamanho da foto original */
+    overflow:hidden;       /* qualquer parte da foto fora desse quadro é cortada, nunca "estoura" */
+    background:#000;
+  }
+  .hero img{
+    width:100%; height:100%;
+    object-fit:cover;      /* preenche o quadro sem distorcer, cortando o excesso */
+    object-position:center;
+    display:block;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,.6) 75%, rgba(0,0,0,.95) 100%);
+    pointer-events:none;
+  }
+
+  /* ---------- Urgency badge — animated ---------- */
+  .badge-urgency{
+    position:absolute; left:16px; bottom:64px;
+    z-index:6;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background: var(--green);
+    color:#fff;
+    font-weight:700;
+    font-size:.82rem;
+    padding:7px 14px 7px 12px;
+    border-radius:6px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 4px 14px rgba(0,0,0,.35);
+    animation: badgeBlink 2.2s ease-in-out infinite;
+  }
+  @keyframes badgeBlink{
+    0%, 45%   { opacity: 1; }
+    72%       { opacity: .62; }
+    100%      { opacity: 1; }
+  }
+
+  .prize-title-wrap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding: 30px 16px 16px;
+    z-index:5;
+  }
+  .prize-title{
+    font-family: var(--font-display);
+    font-size:1.42rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.6);
+  }
+
+  /* ---------- Meus títulos bar ---------- */
+  .titulos-bar{
+    background: #141414;
+    padding: 14px 16px;
+    text-align:center;
+    font-weight:700;
+    letter-spacing:.5px;
+    font-size:.92rem;
+    border-bottom: 1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+  .cart-icon{
+    width:19px; height:19px;
+    color: var(--green-light);
+    flex-shrink:0;
+  }
+
+  /* ---------- Price section ---------- */
+  .price-section{
+    text-align:center;
+    padding: 24px 16px 6px;
+  }
+  .price-label{
+    font-size:1rem;
+    color: var(--text-dim);
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    flex-wrap:wrap;
+  }
+  .price-tag{
+    background: #000;
+    color:#fff;
+    font-family: var(--font-display);
+    font-weight:800;
+    font-size:1.12rem;
+    padding:5px 13px;
+    border-radius:7px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.35);
+  }
+  .price-sub{
+    margin-top:11px;
+    color: var(--text-dim);
+    font-size:.95rem;
+  }
+
+  /* ---------- Quantity grid ---------- */
+  .qty-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:7px;
+    padding: 20px 10px 6px;
+  }
+  .qty-btn{
+    position:relative;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    aspect-ratio: 1.69;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    cursor:pointer;
+    transition: transform .12s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .qty-btn:hover{ border-color: rgba(34,197,94,.4); }
+  .qty-btn:active{ transform: scale(.96); }
+  .qty-btn .amount{
+    font-family: var(--font-display);
+    font-size:1.32rem;
+    font-weight:800;
+    display:block;
+    white-space:nowrap;
+  }
+  .qty-btn .select-label{
+    display:block;
+    margin-top:6px;
+    font-size:.76rem;
+    letter-spacing:1.2px;
+    color: var(--text-dim);
+    font-weight:600;
+  }
+  .qty-btn.popular{
+    background: var(--green-light);
+    color: var(--green-text);
+    border-color: transparent;
+  }
+  .qty-btn.popular .select-label{ color: #45524a; }
+  .qty-btn.popular .tag{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background: var(--green);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:700;
+    padding:4px 11px;
+    border-radius:12px;
+    white-space:nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  }
+
+  /* ---------- Stepper + CTA ---------- */
+  .action-row{
+    display:flex;
+    gap:8px;
+    padding: 20px 10px 8px;
+  }
+  .stepper{
+    flex: 5;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    background: #111928;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .stepper button{
+    background:none; border:none; color:#fff;
+    font-size:1.3rem; font-weight:700;
+    cursor:pointer;
+    width:24px;
+  }
+  .stepper button:disabled{ opacity:.3; cursor:not-allowed; }
+  .stepper .qty-value{
+    font-family: var(--font-display);
+    font-size:1.15rem; font-weight:700;
+    min-width:54px; text-align:center;
+  }
+  .cta-btn{
+    flex:7;
+    position:relative;
+    overflow:hidden;
+    background: var(--green);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    display:flex; flex-direction:row;
+    align-items:center; justify-content:flex-start;
+    gap:14px;
+    cursor:pointer;
+    padding: 10px 16px;
+    box-shadow: 0 4px 16px var(--green-glow);
+  }
+  .cta-btn::before{
+    content:"";
+    position:absolute; top:0; left:-70%;
+    width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.5), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine{ 0%{ left:-70%; } 45%{ left:120%; } 100%{ left:120%; } }
+  .cta-text{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+  }
+  .cta-label{
+    font-weight:600;
+    font-size:.98rem;
+  }
+  .check-icon{
+    width:19px; height:19px;
+    flex-shrink:0;
+  }
+  .cta-price{ font-family: var(--font-display); font-weight:800; font-size:1.16rem; }
+  .cta-btn:disabled{ opacity:.6; cursor:not-allowed; }
+
+  .min-note{
+    text-align:center;
+    color: var(--text-dim);
+    font-size:.78rem;
+    padding: 6px 16px 0;
+  }
+
+  /* ---------- Overlay: loading / error ---------- */
+  .overlay{
+    position:fixed; inset:0;
+    background: rgba(5,9,8,.94);
+    display:flex; align-items:center; justify-content:center;
+    z-index: 999;
+    opacity:0; pointer-events:none;
+    transition: opacity .25s ease;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+  .overlay-box{
+    background: linear-gradient(160deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 34px 26px;
+    max-width: 320px;
+    width: 88%;
+    text-align:center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  .spinner{
+    width:46px; height:46px;
+    border-radius:50%;
+    border: 4px solid #223129;
+    border-top-color: var(--green);
+    margin: 0 auto 18px;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .overlay-title{ font-family: var(--font-display); font-weight:800; font-size:1.08rem; margin-bottom:7px; }
+  .overlay-text{ color: var(--text-dim); font-size:.9rem; line-height:1.45; }
+  .overlay-icon-error{
+    width:46px; height:46px; border-radius:50%;
+    background:#3a1616; color:#f87171;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.4rem; font-weight:800;
+    margin: 0 auto 18px;
+    box-shadow: 0 0 0 6px rgba(248,113,113,.08);
+  }
+  .overlay-close{
+    margin-top:18px;
+    background: var(--panel-2);
+    border:1px solid var(--border);
+    color:#fff;
+    padding:11px 18px;
+    border-radius:9px;
+    font-weight:700;
+    cursor:pointer;
+  }
+</style>
+<!-- ============================================================
+     SUPABASE — captura de acessos e intenção de compra
+     Troque SUPABASE_URL e SUPABASE_ANON_KEY pelos dados do seu projeto.
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ HEADER — troque logo e nome aqui ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="imagens/log.png" alt="Logo" class="brand-logo-only">
+    </div>
+    <div class="menu-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"/></svg>
+    </div>
+  </header>
+
+  <!-- ============ FOTO DO PRÊMIO — troque a imagem em CONFIG.image ============ -->
+  <div class="hero" id="hero">
+    <img id="hero-img" src="imagens/start.png" alt="Prêmio">
+    <div class="badge-urgency">Corre que esta acabando!</div>
+    <div class="prize-title-wrap">
+      <div class="prize-title" id="prizeTitle">HONDA START 160</div>
+    </div>
+  </div>
+
+  <div class="titulos-bar">
+    <svg class="cart-icon" viewBox="0 0 640 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M423.3 440.7c0 25.3-20.3 45.6-45.6 45.6s-45.8-20.3-45.8-45.6 20.6-45.8 45.8-45.8c25.4 0 45.6 20.5 45.6 45.8zm-253.9-45.8c-25.3 0-45.6 20.6-45.6 45.8s20.3 45.6 45.6 45.6 45.8-20.3 45.8-45.6-20.5-45.8-45.8-45.8zm291.7-270C158.9 124.9 81.9 112.1 0 25.7c34.4 51.7 53.3 148.9 373.1 144.2 333.3-5 130 86.1 70.8 188.9 186.7-166.7 319.4-233.9 17.2-233.9z"/>
+    </svg>
+    MEUS TÍTULOS
+  </div>
+
+  <div class="price-section">
+    <div class="price-label">Por apenas <span class="price-tag">R$ 0,03</span></div>
+    <div class="price-sub">Quanto mais títulos, mais chances de ganhar!</div>
+  </div>
+
+  <!-- ============ BOTÕES DE QUANTIDADE ============ -->
+  <div class="qty-grid" id="qtyGrid">
+    <!-- gerado via JS a partir de QUICK_AMOUNTS -->
+  </div>
+
+  <div class="action-row">
+    <div class="stepper">
+      <button id="minusBtn">−</button>
+      <div class="qty-value" id="qtyValue">300</div>
+      <button id="plusBtn">+</button>
+    </div>
+    <button class="cta-btn" id="ctaBtn">
+      <svg class="check-icon" viewBox="0 0 512 512" fill="#fff"><path d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7.1-34zm-324.3 106c6.2 6.3 16.4 6.3 22.6 0l208-208.2c6.2-6.3 6.2-16.4 0-22.6L366.1 4.7c-6.2-6.3-16.4-6.3-22.6 0L192 156.2l-55.4-55.5c-6.2-6.3-16.4-6.3-22.6 0L68.7 146c-6.2 6.3-6.2 16.4 0 22.6l112 112.2z"/></svg>
+      <span class="cta-text">
+        <span class="cta-label">Quero participar</span>
+        <span class="cta-price" id="ctaPrice">R$ 9,00</span>
+      </span>
+    </button>
+  </div>
+  <div class="min-note">🔒 Privacidade e Segurança</div>
+
+</div>
+
+<!-- ============ OVERLAY: carregando -> instabilidade ============ -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box" id="overlayBox">
+    <!-- conteúdo trocado via JS -->
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   CONFIGURAÇÃO — edite só esta parte para trocar prêmio, fotos e regras
+   ========================================================================= */
+const CONFIG = {
+  prizeName: "HONDA START 160",
+  image: "imagens/start.png",   // uma única foto — troque o arquivo na pasta imagens mantendo esse nome
+                                // TAMANHO IDEAL: 1200 x 930px (proporção ~4:3). Pode ser maior,
+                                // mas o quadro sempre corta/ajusta pro mesmo tamanho na tela.
+  pricePerUnit: 0.03,       // R$ por título
+  defaultQty: 300,          // quantidade inicial (300 x 0,03 = R$ 9,00)
+  minValue: 4.90,           // valor mínimo de compra permitido
+  stepUnit: 1,              // quanto cada clique no +/- da esquerda muda
+  quickAmounts: [           // os 6 botões de seleção rápida (ADICIONAM à quantidade atual)
+    { amount: 200 },
+    { amount: 300, popular: true },
+    { amount: 700 },
+    { amount: 1500 },
+    { amount: 5000 },
+    { amount: 10000 }
+  ]
+};
+
+/* ========================================================================= */
+
+const minQty = Math.ceil(CONFIG.minValue / CONFIG.pricePerUnit);
+let qty = Math.max(CONFIG.defaultQty, minQty);
+
+const qtyValueEl = document.getElementById('qtyValue');
+const ctaPriceEl = document.getElementById('ctaPrice');
+const minusBtn = document.getElementById('minusBtn');
+const qtyGrid = document.getElementById('qtyGrid');
+document.getElementById('prizeTitle').textContent = CONFIG.prizeName;
+document.getElementById('hero-img').src = CONFIG.image;
+
+function formatBRL(v){
+  return 'R$ ' + v.toFixed(2).replace('.', ',');
+}
+
+function renderQty(){
+  qtyValueEl.textContent = qty.toLocaleString('pt-BR');
+  const total = qty * CONFIG.pricePerUnit;
+  ctaPriceEl.textContent = formatBRL(total);
+  minusBtn.disabled = qty <= minQty;
+}
+
+function addQty(n){
+  qty += n;
+  renderQty();
+}
+
+function stepQty(delta){
+  const next = qty + delta;
+  if(next < minQty) return;
+  qty = next;
+  renderQty();
+}
+
+// monta os botões de seleção rápida
+CONFIG.quickAmounts.forEach(item => {
+  const btn = document.createElement('div');
+  btn.className = 'qty-btn' + (item.popular ? ' popular' : '');
+  btn.innerHTML = `
+    ${item.popular ? '<div class="tag">Mais popular</div>' : ''}
+    <span class="amount">+${item.amount.toLocaleString('pt-BR')}</span>
+    <span class="select-label">SELECIONAR</span>
+  `;
+  btn.addEventListener('click', () => addQty(item.amount));
+  qtyGrid.appendChild(btn);
+});
+
+document.getElementById('minusBtn').addEventListener('click', () => stepQty(-CONFIG.stepUnit));
+document.getElementById('plusBtn').addEventListener('click', () => stepQty(CONFIG.stepUnit));
+
+renderQty();
+
+/* ---------------- CTA: carregando -> instabilidade ----------------
+   NENHUM dado é coletado (sem nome/telefone) e NENHUM evento além do
+   PageView padrão é enviado ao Meta Pixel. Isso é só um teste visual
+   de demanda/oferta.
+--------------------------------------------------------------------- */
+const overlay = document.getElementById('overlay');
+const overlayBox = document.getElementById('overlayBox');
+
+document.getElementById('ctaBtn').addEventListener('click', () => {
+  overlayBox.innerHTML = `
+    <div class="spinner"></div>
+    <div class="overlay-title">Processando...</div>
+    <div class="overlay-text">Estamos confirmando a disponibilidade dos seus títulos.</div>
+  `;
+  overlay.classList.add('show');
+
+  // registra a intenção de compra (quantidade + valor) no Supabase
+  logEvent('intent', { quantity: qty, value: Number((qty * CONFIG.pricePerUnit).toFixed(2)) });
+
+  setTimeout(() => {
+    overlayBox.innerHTML = `
+      <div class="overlay-icon-error">!</div>
+      <div class="overlay-title">Instabilidade no sistema</div>
+      <div class="overlay-text">Não foi possível concluir sua solicitação agora. Tente novamente em alguns minutos.</div>
+      <button class="overlay-close" id="closeOverlay">Fechar</button>
+    `;
+    document.getElementById('closeOverlay').addEventListener('click', () => {
+      overlay.classList.remove('show');
+    });
+  }, 2200);
+});
+
+/* =========================================================================
+   SUPABASE — captura de acessos (pageview) e intenção de compra (intent)
+   NENHUM dado pessoal é coletado (sem nome/telefone/email) — só o
+   comportamento: dispositivo, hora do acesso, quantidade/valor que a
+   pessoa selecionou antes de clicar em "Quero participar".
+   ========================================================================= */
+const SUPABASE_URL = "https://nlgcliekkvipasdnlsgu.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2NsaWVra3ZpcGFzZG5sc2d1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNjY4MDQsImV4cCI6MjA4Njk0MjgwNH0.LA1bvaRpDLelyHNA5u0RjynNm241_7zeKdrx9L_hsTY";
+const SUPABASE_TABLE = "site_events";
+
+let supabaseClient = null;
+try {
+  if (window.supabase && SUPABASE_URL.startsWith("http")) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+} catch (e) {
+  console.warn("Supabase não inicializado:", e);
+}
+
+function detectDevice() {
+  const ua = navigator.userAgent;
+  if (/android/i.test(ua)) return "Android";
+  if (/iphone|ipad|ipod/i.test(ua)) return "iOS";
+  if (/windows/i.test(ua)) return "Windows";
+  if (/macintosh/i.test(ua)) return "Mac";
+  return "Outro";
+}
+
+// ---- ID único por visitante ----
+// Gerado uma vez só e guardado no navegador da pessoa (localStorage).
+// Todo evento (pageview e intent) leva esse mesmo id, então mesmo que a
+// pessoa clique em "Quero participar" várias vezes, dá pra saber no
+// Supabase que são tentativas da MESMA pessoa (agrupando por visitor_id).
+function getVisitorId() {
+  const KEY = 'visitor_id';
+  let id = localStorage.getItem(KEY);
+  if (!id) {
+    id = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : 'v-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+    localStorage.setItem(KEY, id);
+  }
+  return id;
+}
+const VISITOR_ID = getVisitorId();
+
+// ---- ESSA PARTE ESTAVA FALTANDO NO SEU ARQUIVO ----
+// Cria/atualiza o registro do visitante ANTES de gravar qualquer evento.
+// Sem isso, o Supabase recusa a gravação (site_events depende de visitors existir).
+async function ensureVisitor() {
+  if (!supabaseClient) return;
+  try {
+    await supabaseClient.from('visitors').upsert([{
+      visitor_id: VISITOR_ID,
+      device_type: detectDevice(),
+      user_agent: navigator.userAgent
+    }], { onConflict: 'visitor_id' });
+  } catch (e) {
+    console.warn("Falha ao registrar visitante:", e);
+  }
+}
+
+async function logEvent(eventType, extra = {}) {
+  if (!supabaseClient) return; // sem credenciais configuradas ainda, não faz nada
+  try {
+    await supabaseClient.from(SUPABASE_TABLE).insert([{
+      visitor_id: VISITOR_ID,          // mesmo id para todos os eventos da mesma pessoa
+      event_type: eventType,           // 'pageview' ou 'intent'
+      device_type: detectDevice(),
+      user_agent: navigator.userAgent,
+      campaign: CONFIG.prizeName,
+      ...extra
+    }]);
+  } catch (e) {
+    console.warn("Falha ao registrar evento:", e);
+  }
+}
+
+// garante o visitante criado/atualizado primeiro, só depois registra o acesso
+(async () => {
+  await ensureVisitor();
+  await logEvent('pageview');
+})();
+
+</script>
+
+</body>
+</html>
