@@ -9,10 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- ============================================================
-     META PIXEL — SOMENTE PAGEVIEW (padrão, sem eventos customizados)
-     Troque SEU_PIXEL_ID_AQUI pelo ID real do seu Pixel.
-     ============================================================ -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -28,7 +24,6 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
 /></noscript>
-<!-- ============================================================ -->
 
 <style>
   :root{
@@ -65,8 +60,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     position: relative;
     padding-bottom: 44px;
   }
-
-  /* ---------- Header ---------- */
   header.topbar{
     background: linear-gradient(180deg, #000 0%, #060a08 100%);
     display:flex;
@@ -82,18 +75,16 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     border-radius:6px; object-fit:contain;
   }
   .menu-icon{ font-size:1.35rem; color:#fff; opacity:.8; }
-
-  /* ---------- Foto do prêmio (única, tamanho sempre travado) ---------- */
   .hero{
     position:relative;
     width:100%;
-    aspect-ratio: 4/3.1;   /* trava a proporção do quadro, não importa o tamanho da foto original */
-    overflow:hidden;       /* qualquer parte da foto fora desse quadro é cortada, nunca "estoura" */
+    aspect-ratio: 4/3.1;
+    overflow:hidden;
     background:#000;
   }
   .hero img{
     width:100%; height:100%;
-    object-fit:cover;      /* preenche o quadro sem distorcer, cortando o excesso */
+    object-fit:cover;
     object-position:center;
     display:block;
   }
@@ -103,8 +94,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,.6) 75%, rgba(0,0,0,.95) 100%);
     pointer-events:none;
   }
-
-  /* ---------- Urgency badge — animated ---------- */
   .badge-urgency{
     position:absolute; left:16px; bottom:64px;
     z-index:6;
@@ -125,7 +114,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     72%       { opacity: .62; }
     100%      { opacity: 1; }
   }
-
   .prize-title-wrap{
     position:absolute; left:0; right:0; bottom:0;
     padding: 30px 16px 16px;
@@ -139,8 +127,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     letter-spacing:.4px;
     text-shadow: 0 2px 10px rgba(0,0,0,.6);
   }
-
-  /* ---------- Meus títulos bar ---------- */
   .titulos-bar{
     background: #141414;
     padding: 14px 16px;
@@ -159,8 +145,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     color: var(--green-light);
     flex-shrink:0;
   }
-
-  /* ---------- Price section ---------- */
   .price-section{
     text-align:center;
     padding: 24px 16px 6px;
@@ -186,8 +170,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     color: var(--text-dim);
     font-size:.95rem;
   }
-
-  /* ---------- Quantity grid ---------- */
   .qty-grid{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -210,6 +192,7 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
   }
   .qty-btn:hover{ border-color: rgba(34,197,94,.4); }
   .qty-btn:active{ transform: scale(.96); }
+  .qty-btn.disabled{ opacity:.35; cursor:not-allowed; pointer-events:none; }
   .qty-btn .amount{
     font-family: var(--font-display);
     font-size:1.32rem;
@@ -242,8 +225,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     white-space:nowrap;
     box-shadow: 0 3px 10px rgba(0,0,0,.3);
   }
-
-  /* ---------- Stepper + CTA ---------- */
   .action-row{
     display:flex;
     gap:8px;
@@ -312,15 +293,21 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
   }
   .cta-price{ font-family: var(--font-display); font-weight:800; font-size:1.16rem; }
   .cta-btn:disabled{ opacity:.6; cursor:not-allowed; }
-
   .min-note{
     text-align:center;
     color: var(--text-dim);
     font-size:.78rem;
     padding: 6px 16px 0;
   }
-
-  /* ---------- Overlay: loading / error ---------- */
+  .limit-warning{
+    text-align:center;
+    color:#f0b45c;
+    font-size:.8rem;
+    font-weight:700;
+    padding: 8px 16px 0;
+    display:none;
+  }
+  .limit-warning.show{ display:block; }
   .overlay{
     position:fixed; inset:0;
     background: rgba(5,9,8,.94);
@@ -370,19 +357,11 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     cursor:pointer;
   }
 </style>
-<!-- ============================================================
-     SUPABASE — captura de acessos e intenção de compra
-     Troque SUPABASE_URL e SUPABASE_ANON_KEY pelos dados do seu projeto.
-     ============================================================ -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-
-
 </head>
 <body>
 
 <div class="app">
-
-  <!-- ============ HEADER — troque logo e nome aqui ============ -->
   <header class="topbar">
     <div class="brand">
       <img src="imagens/log.png" alt="Logo" class="brand-logo-only">
@@ -392,7 +371,6 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     </div>
   </header>
 
-  <!-- ============ FOTO DO PRÊMIO — troque a imagem em CONFIG.image ============ -->
   <div class="hero" id="hero">
     <img id="hero-img" src="imagens/start.png" alt="Prêmio">
     <div class="badge-urgency">Corre que esta acabando!</div>
@@ -413,10 +391,7 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     <div class="price-sub">Quanto mais títulos, mais chances de ganhar!</div>
   </div>
 
-  <!-- ============ BOTÕES DE QUANTIDADE ============ -->
-  <div class="qty-grid" id="qtyGrid">
-    <!-- gerado via JS a partir de QUICK_AMOUNTS -->
-  </div>
+  <div class="qty-grid" id="qtyGrid"></div>
 
   <div class="action-row">
     <div class="stepper">
@@ -433,30 +408,24 @@ src="https://www.facebook.com/tr?id=177054881906087&ev=PageView&noscript=1"
     </button>
   </div>
   <div class="min-note">🔒 Privacidade e Segurança</div>
+  <div class="limit-warning" id="limitWarning">Limite máximo de 25.000 títulos por compra atingido.</div>
 
 </div>
 
-<!-- ============ OVERLAY: carregando -> instabilidade ============ -->
 <div class="overlay" id="overlay">
-  <div class="overlay-box" id="overlayBox">
-    <!-- conteúdo trocado via JS -->
-  </div>
+  <div class="overlay-box" id="overlayBox"></div>
 </div>
 
 <script>
-/* =========================================================================
-   CONFIGURAÇÃO — edite só esta parte para trocar prêmio, fotos e regras
-   ========================================================================= */
 const CONFIG = {
   prizeName: "HONDA START 160",
-  image: "imagens/start.png",   // uma única foto — troque o arquivo na pasta imagens mantendo esse nome
-                                // TAMANHO IDEAL: 1200 x 930px (proporção ~4:3). Pode ser maior,
-                                // mas o quadro sempre corta/ajusta pro mesmo tamanho na tela.
-  pricePerUnit: 0.03,       // R$ por título
-  defaultQty: 99,          // quantidade inicial (300 x 0,03 = R$ 9,00)
-  minValue: 1.90,           // valor mínimo de compra permitido
-  stepUnit: 1,              // quanto cada clique no +/- da esquerda muda
-  quickAmounts: [           // os 6 botões de seleção rápida (ADICIONAM à quantidade atual)
+  image: "imagens/start.png",
+  pricePerUnit: 0.03,
+  defaultQty: 99,
+  minValue: 1.90,
+  maxQty: 25000,
+  stepUnit: 1,
+  quickAmounts: [
     { amount: 200 },
     { amount: 300, popular: true },
     { amount: 700 },
@@ -466,15 +435,16 @@ const CONFIG = {
   ]
 };
 
-/* ========================================================================= */
-
 const minQty = Math.ceil(CONFIG.minValue / CONFIG.pricePerUnit);
+const maxQty = CONFIG.maxQty;
 let qty = Math.max(CONFIG.defaultQty, minQty);
 
 const qtyValueEl = document.getElementById('qtyValue');
 const ctaPriceEl = document.getElementById('ctaPrice');
 const minusBtn = document.getElementById('minusBtn');
+const plusBtn = document.getElementById('plusBtn');
 const qtyGrid = document.getElementById('qtyGrid');
+const limitWarning = document.getElementById('limitWarning');
 document.getElementById('prizeTitle').textContent = CONFIG.prizeName;
 document.getElementById('hero-img').src = CONFIG.image;
 
@@ -487,21 +457,25 @@ function renderQty(){
   const total = qty * CONFIG.pricePerUnit;
   ctaPriceEl.textContent = formatBRL(total);
   minusBtn.disabled = qty <= minQty;
+  const atMax = qty >= maxQty;
+  plusBtn.disabled = atMax;
+  limitWarning.classList.toggle('show', atMax);
+  [...qtyGrid.children].forEach(btn => btn.classList.toggle('disabled', atMax));
 }
 
 function addQty(n){
-  qty += n;
+  if (qty >= maxQty) return;
+  qty = Math.min(qty + n, maxQty);
   renderQty();
 }
 
 function stepQty(delta){
   const next = qty + delta;
   if(next < minQty) return;
-  qty = next;
+  qty = Math.min(next, maxQty);
   renderQty();
 }
 
-// monta os botões de seleção rápida
 CONFIG.quickAmounts.forEach(item => {
   const btn = document.createElement('div');
   btn.className = 'qty-btn' + (item.popular ? ' popular' : '');
@@ -519,11 +493,6 @@ document.getElementById('plusBtn').addEventListener('click', () => stepQty(CONFI
 
 renderQty();
 
-/* ---------------- CTA: carregando -> instabilidade ----------------
-   NENHUM dado é coletado (sem nome/telefone) e NENHUM evento além do
-   PageView padrão é enviado ao Meta Pixel. Isso é só um teste visual
-   de demanda/oferta.
---------------------------------------------------------------------- */
 const overlay = document.getElementById('overlay');
 const overlayBox = document.getElementById('overlayBox');
 
@@ -535,7 +504,6 @@ document.getElementById('ctaBtn').addEventListener('click', () => {
   `;
   overlay.classList.add('show');
 
-  // registra a intenção de compra (quantidade + valor) no Supabase
   logEvent('intent', { quantity: qty, value: Number((qty * CONFIG.pricePerUnit).toFixed(2)) });
 
   setTimeout(() => {
@@ -551,12 +519,6 @@ document.getElementById('ctaBtn').addEventListener('click', () => {
   }, 2200);
 });
 
-/* =========================================================================
-   SUPABASE — captura de acessos (pageview) e intenção de compra (intent)
-   NENHUM dado pessoal é coletado (sem nome/telefone/email) — só o
-   comportamento: dispositivo, hora do acesso, quantidade/valor que a
-   pessoa selecionou antes de clicar em "Quero participar".
-   ========================================================================= */
 const SUPABASE_URL = "https://nlgcliekkvipasdnlsgu.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2NsaWVra3ZpcGFzZG5sc2d1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNjY4MDQsImV4cCI6MjA4Njk0MjgwNH0.LA1bvaRpDLelyHNA5u0RjynNm241_7zeKdrx9L_hsTY";
 const SUPABASE_TABLE = "site_events";
@@ -579,11 +541,6 @@ function detectDevice() {
   return "Outro";
 }
 
-// ---- ID único por visitante ----
-// Gerado uma vez só e guardado no navegador da pessoa (localStorage).
-// Todo evento (pageview e intent) leva esse mesmo id, então mesmo que a
-// pessoa clique em "Quero participar" várias vezes, dá pra saber no
-// Supabase que são tentativas da MESMA pessoa (agrupando por visitor_id).
 function getVisitorId() {
   const KEY = 'visitor_id';
   let id = localStorage.getItem(KEY);
@@ -597,9 +554,6 @@ function getVisitorId() {
 }
 const VISITOR_ID = getVisitorId();
 
-// ---- ESSA PARTE ESTAVA FALTANDO NO SEU ARQUIVO ----
-// Cria/atualiza o registro do visitante ANTES de gravar qualquer evento.
-// Sem isso, o Supabase recusa a gravação (site_events depende de visitors existir).
 async function ensureVisitor() {
   if (!supabaseClient) return;
   try {
@@ -614,11 +568,11 @@ async function ensureVisitor() {
 }
 
 async function logEvent(eventType, extra = {}) {
-  if (!supabaseClient) return; // sem credenciais configuradas ainda, não faz nada
+  if (!supabaseClient) return;
   try {
     await supabaseClient.from(SUPABASE_TABLE).insert([{
-      visitor_id: VISITOR_ID,          // mesmo id para todos os eventos da mesma pessoa
-      event_type: eventType,           // 'pageview' ou 'intent'
+      visitor_id: VISITOR_ID,
+      event_type: eventType,
       device_type: detectDevice(),
       user_agent: navigator.userAgent,
       campaign: CONFIG.prizeName,
@@ -629,7 +583,6 @@ async function logEvent(eventType, extra = {}) {
   }
 }
 
-// garante o visitante criado/atualizado primeiro, só depois registra o acesso
 (async () => {
   await ensureVisitor();
   await logEvent('pageview');
